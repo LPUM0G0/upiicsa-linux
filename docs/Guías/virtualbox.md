@@ -293,7 +293,16 @@ En algún momento, una pantalla negra mostrará el nombre de nuestro servidor se
 Si pudimos ejecutar los dos comandos que se mostraron en el paso 3, nuestro servidor ya está funcionando. ¡Felicidades!
 
 
-## Acceso remoto mediante SSH
+## Cuando acabes
+
+Solo escribe:
+
+```BASH
+sudo shutdown now
+```
+
+Con ese comando apagarás la máquina virtual y con eso terminamos esta guía. 
+
 
     
 

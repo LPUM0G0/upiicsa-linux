@@ -153,8 +153,6 @@ Nuestra intención con la exposición anterior fue resaltar la importancia de ca
 
 1. [Guía VirtualBox.](../Guías/virtualbox.md)
 
-2. [Guía Docker.](../Guías/docker.md) 
-
-3. [Guía AWS.](../Guías/AWS.md)
+2. [Guía AWS.](../Guías/AWS.md)
 
 Para cada alternativa, publicaremos la guía correspondiente, y tenemos la intención de ampliar dichas guías para cubrir la mayor cantidad de plataformas en la nube posible, hasta incluir todas las sugeridas en la tabla comparativa.

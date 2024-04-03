@@ -3,6 +3,7 @@ site_url: https://lpumogo22.github.io/upiicsa-linux/
 theme:
   name: material
   logo: assets/lin.png
+  favicon: assets/lin.png
   features:
     - navigation.tabs
     - navigation.sections
@@ -35,10 +36,10 @@ plugins:
 
 extra:
   social:
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/LPUMOGO22
     - icon: fontawesome/brands/discord
       link: https://discord.gg/x4PeFPUf
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/LPUMOGO22
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/mora-gómez-luis-enrique-5a7411221/
 
