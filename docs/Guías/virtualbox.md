@@ -293,7 +293,7 @@ En algún momento, una pantalla negra mostrará el nombre de nuestro servidor se
 Si pudimos ejecutar los dos comandos que se mostraron en el paso 3, nuestro servidor ya está funcionando. ¡Felicidades!
 
 
-## Cuando acabes
+## Apaga tu máquina virtual
 
 Solo escribe:
 
@@ -301,7 +301,20 @@ Solo escribe:
 sudo shutdown now
 ```
 
-Con ese comando apagarás la máquina virtual y con eso terminamos esta guía. 
+## Conclusión
+
+Este material te puede servir como una muy básica guía de referencia para virtualizar servidores Ubuntu en Virtualbox, pero hay mucho más por aprender... mucho éxito en tu camino. 
+
+Dirigete al [Módulo 2 - Conoce tu servidor](..//Curso/Módulo_02_Conoce_tu_servidor.md) para continuar con el taller.
+
+!!! tip "Aún hay más..."
+    Te invitamos a que investigues los siguientes conceptos:
+        
+    - VMware
+    - Hypervisor
+    - Bare Metal
+    - MS Hyper-V
+
 
 
     

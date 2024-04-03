@@ -1,6 +1,6 @@
 ## Registro en AWS
 
-Para registrarse, debes dirigirte al siguiente [sitio](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email).
+Para registrarse, debes dirigirte al siguiente [enlace](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email).
 
 En él, debes proporcionar una dirección de correo electrónico y un nombre de usuario, como se muestra en la siguiente imagen:
 
@@ -10,7 +10,7 @@ Una vez hayas llenado la información solicitada, haz clic en el botón "Verify 
 
 ![IMG-02](../assets/gaws_02.png)
 
-Una vez que la plataforma haya confirmado tu correo electrónico, te guiará a través de un proceso de registro en 5 pasos:
+Una vez que la plataforma haya confirmado tu cuenta de correo electrónico, te guiará a través de un proceso de registro en 5 pasos:
 
 1. Crea una contraseña.
 2. Proporciona tu información de contacto.
@@ -40,13 +40,11 @@ La ventana principal de la plataforma se ve de la siguiente manera:
 
 ![IMG-06](../assets/gaws_06.png)
 
-Para desplegar nuestro servidor debemos elegir el servicio correspondiente, para ello de click en el menú "Services" situado en la esquina superior izquierda junto al logo de AWS, ahí se desplegará una lista de categorías, busque la categoría "Compute" y de click en ella, las opciones se actualizarán y elegiremos el servicio "EC2" que es un VPS.
+Para desplegar nuestro servidor debemos elegir el servicio correspondiente, para ello da click en el menú "Services" situado en la esquina superior izquierda junto al logo de AWS, ahí se desplegará una lista de categorías, busque la categoría "Compute" y da click en ella, las opciones se actualizarán y elegiremos el servicio "EC2" que es un VPS.
 
 ![IMG-07](../assets/gaws_07.png)
 
 Una vez hemos elegido el servicio a desplegar (EC2) la plataforma nos mostrará un dashboard nuevo con muchas opciones que nos pueden resultar extrañas, lo único que buscamos en ese nuevo panel es un botón naranja que dice "Launch instance".
-
-![IMG-08](../assets/gaws_09.png)
 
 ![IMG-09](../assets/gaws_08.png)
 
@@ -75,7 +73,7 @@ En este apartado debemos escribir un nombre con el que podamos identificar a est
 !!! danger "Es importante el SO"
     Sistemas Operativos como Windows Server podrían implicar costes de licencias que debes contemplar. 
 
-Aquí debemos seleccionar el sistema operativo que será instalado en nuestro servidor, para este taller usaremos "Ubuntu Server LTS", para seleccionarlo basta con dar click en el ícono de Ubuntu debajo de la pestaña "Quick Start" y podremos corroborar que sea nuestra imagen deseada en "Amazon Machine Image (AMI)".
+Aquí debemos seleccionar el sistema operativo que será instalado en nuestro servidor, para este taller usaremos "Ubuntu Server LTS", para seleccionarlo basta con dar click en el icono de Ubuntu debajo de la pestaña "Quick Start" y podremos corroborar que sea nuestra imagen deseada en "Amazon Machine Image (AMI)".
 
 Tu selección debería verse muy similar al contenido mostrado en la siguiente imagen:
 
@@ -141,7 +139,7 @@ Debemos verificar que los siguientes parámetros sí tengan estos valores:
 
 ### Configure storage
 
-Aquí asegurate que los parametros sean iguales a los de la imagen adjunta (deberían serlo porque son los parámetros por defecto).
+Aquí asegúrate que los parametros sean iguales a los de la imagen adjunta (deberían serlo porque son los parámetros por defecto).
 
 ![IMG-15](../assets/gaws_15.png)
 
@@ -149,7 +147,7 @@ Aquí asegurate que los parametros sean iguales a los de la imagen adjunta (debe
 
 ### Advanced details
 
-De momento no modificaremos nada en esta sección. 
+Por el momento no modificaremos nada en esta sección. 
 
 ***
 
@@ -165,8 +163,106 @@ Después de unos segundos deberías ver un mensaje que indique que tu instancia 
 ![IMG-17](../assets/gaws_17.png)
 
 
-Si llegaste hasta este punto de la guía sin tener problemas, felicidades configuraste tu primer VPS en AWS de forma exitosa, ya está disponible para que trabajes con él. 
+Si has llegado hasta este punto de la guía sin tener problemas, felicidades configuraste tu primer VPS en AWS de forma exitosa, ya está disponible para que trabajes con él. 
 
-En el [Módulo 2 - Conoce tu servidor](./Curso/Módulo_02_Conoce_tu_servidor.md) aprenderas como conectarte de manera remota para ocuparlo. 
+En el [Módulo 2 - Conoce tu servidor](..//Curso/Módulo_02_Conoce_tu_servidor.md) aprenderas como conectarte de manera remota para ocuparlo. 
 
 Es muy importante que sepas como **detener tu servidor** porque solo puedes tenerlo prendido 750 horas sin generar cargos, tambien es importante que sepas como **eliminarlo** para que no te cobren por él una vez termines el taller, a continuación habrá dos secciones que te enseñarán a realizar estas dos acciones. 
+
+## Detener o Eliminar instancia EC2
+
+### Accede a la consola de administración de AWS
+
+Dirigete a la siguiente [página](https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2) (es posible que te pida ingresar tus credenciales), una vez que estés dentro verás una página similar a la siguiente:
+
+![IMG-20](../assets/gaws_20.png)
+
+### Navega hacia el dashboard EC2
+
+Hay diferentes maneras de llegar desde la consola principal al dashboard del servicio deseado, nosotros primero daremos click en el menú con tres líneas horizontales paralelas situado en la esquina superior izquierda, debajo del logo de AWS, ahí nos desplegará un menú con el título "Console Home".
+
+![IMG-21](../assets/gaws_21.png)
+
+En dicho menú selecciona la opción "All Services", esto cambiará el contenido mostrado en el panel derecho de la aplicación, ahí busca la categoría "Compute" y en ella el servicio "EC2".
+
+![IMG-22](../assets/gaws_22.png)
+
+La ventana se actualizará y lo que vemos ahora es el dashboard del servicio EC2.
+
+![IMG-23](../assets/gaws_23.png)
+
+!!! note "Resumen de recursos"
+    En el panel "Resources" podrá ver un cuadro con la cantidad de recursos que están asociados a su cuenta en cierta zona, si ha seguido esta guía únicamente y no tiene proyectos adicionales debería tener los siguientes recursos listados:
+
+    - Instances (Running) 1 
+    - Instances 1
+    - Key pairs 1
+    - Security Groups 2
+    - Volumes 1 
+
+    ![IMG-24](../assets/gaws_24.png)
+
+### Localice la instancia deseada
+
+Para listar nuestras instancias podemos dar click en la opción "Instances" situada en el menú lateral izquierdo o en la opción "Instances" del panel con el resumen de recursos. 
+
+![IMG-25](../assets/gaws_25.png)
+
+El sitio se actualizará y nos mostrará nuestras instancias.
+
+![IMG-26](../assets/gaws_26.png)
+
+### Detener una instancia
+
+!!! note "asegúrate de seleccionar la instancia correcta"
+    Para operar con una instancia primero asegúrate que sea la correcta, valida que el nombre en la columna "Name" corresponda con el VPS que quieres operar.
+
+
+ Una vez identificada la instancia bastará con dar click derecho en cualquier parte de la fila que representa la instancia, y en el menú que se despliega seleccionar la opción "Stop instance".
+
+![IMG-27](../assets/gaws_27.png)
+
+Emergerá una ventana para confirmar nuestra acción, da click en el botón que dice "Stop".
+
+![IMG-28](../assets/gaws_28.png)
+
+Después de unos segundos deberá ver que la operación se completó exitosamente y que el estado de la instancia cambió a "stopped".
+
+![IMG-29](../assets/gaws_29.png)
+
+El proceso para volver a activar la instancia es análogo, solo selecciona la opción "Start Instance".
+
+![IMG-30](../assets/gaws_30.png)
+
+### Eliminar una instancia
+
+
+!!! danger "La irreversibilidad de la acción Terminate"
+    Una vez que hayas terminado una instancia NO hay manera de recuperarla, así que solo realiza este proceso cuando estés seguro de que no ocuparás el VPS en absoluto y no representa ninguna pérdida de información.
+
+Antes de eliminar una instancia asegúrate de haberla detenido, una vez esté detenida deberás dar click derecho en cualquier parte de la fila que representa la instancia, y en el menú que se despliega seleccionar la opción "Terminate instance".
+
+![IMG-31](../assets/gaws_31.png)
+
+
+Emergerá una ventana para confirmar nuestra acción, da click en el botón que dice "Terminate".
+
+![IMG-32](../assets/gaws_32.png)
+
+Al poco tiempo el estado de nuestra instancia cambiará a "Terminated" y después de unas horas ya no la veremos en nuestro listado de instancias. 
+
+![IMG-33](../assets/gaws_33.png)
+
+Si vuelve a dirigirse al dashboard de EC2 verá que los recursos diminuyeron en uno, excepto por la cantidad de instancias, esto es porque aún no se ve reflejado totalmente el cambio, pero después de una horas tambien se descontará esa instancia. 
+
+![IMG-34](../assets/gaws_34.png)
+
+
+## Conclusión
+
+Este material te puede servir como una muy básica guía de referencia para implementar servidores VPS en la plataforma AWS, te recomendamos que solo mantengas el servidor activo el tiempo que planes estudiar con él para evitar consumir tus 750 horas, para ello consulta el apartado "Detener o Eliminar instancia EC2" las veces que requieras.
+
+Dirigete al [Módulo 2 - Conoce tu servidor](..//Curso/Módulo_02_Conoce_tu_servidor.md) para continuar con el taller.
+
+!!! tip "Aún hay más..."
+    Esta no es la única manera de interactuar con AWS, te invitamos a que investigues qué es la CloudShell de AWS.
