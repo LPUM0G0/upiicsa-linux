@@ -257,6 +257,21 @@ Si vuelve a dirigirse al dashboard de EC2 verá que los recursos diminuyeron en 
 
 ![IMG-34](../assets/gaws_34.png)
 
+## Obtener la IP de tu VPS
+Conocer la IP de tu VPS es crucial para poder conectarte a él.
+
+Hacerlo es muy sencillo, identifica la instancia de la que quieres saber los detalles y da click en el hipervínculo azul situado en la columna "Instance ID".
+
+![IMG-35](../assets/gaws_35.png)
+
+El sitio se actualizará y la información de la IP se verá en el recuadro "Public IPv4 address".
+
+![IMG-35](../assets/gaws_36.png)
+
+## Usuario por defecto para conexiones remotas
+
+Este dato no se configuró en ningún punto, pero la imagen de Ubuntu Server usada en AWS tiene por defecto al usuario `ubuntu` como el usuario administrador.
+
 
 ## Conclusión
 
