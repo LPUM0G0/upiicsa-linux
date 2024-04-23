@@ -1,0 +1,31 @@
+ssh
+uname
+uptime
+whoami
+who
+w
+lshw
+lscpu
+lsblk
+lspci
+lsusb
+free -h
+vmstat
+top
+htop
+df -h
+du -h
+man
+tldr
+apropos
+help
+info
+pwd
+cd
+ls
+mkdir
+touch
+cp
+mv
+rm
+cat
