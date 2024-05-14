@@ -183,7 +183,9 @@ ssh-keygen -t rsa -b 4096 -C lpumogo@proton.me
 ```
 
 - Nos preguntará si queremos personalizar el nombre del fichero que almacene la clave privada, nosotros lo dejaremos con el nombre por defecto, entonces solo damos `ENTER`.
+
     ![IMG-42](../assets/ggit_42.png)
+    
 - A continuación preguntará si queremos proteger nuestra clave ssh con una frase, nosotros la dejaremos sin esa protección y daremos en `ENTER` sin escribir nada. 
 
     ![IMG-43](../assets/ggit_43.png)
