@@ -1,0 +1,1511 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lpumogo22.github.io/upiicsa-linux/Gu%C3%ADas/AWS/">
+      
+      
+        <link rel="prev" href="../../Curso/M%C3%B3dulo_22_Conclusiones_y_pr%C3%B3ximos_pasos/">
+      
+      
+        <link rel="next" href="../Django/">
+      
+      
+      <link rel="icon" href="../../assets/lin.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>AWS - Taller de Introducción a Linux</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="AWS - Taller de Introducción a Linux" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Guías/AWS.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://lpumogo22.github.io/upiicsa-linux/Gu%C3%ADas/AWS/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="AWS - Taller de Introducción a Linux" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Guías/AWS.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#registro-en-aws" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-header__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taller de Introducción a Linux
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AWS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Curso/M%C3%B3dulo_01_Introducci%C3%B3n/" class="md-tabs__link">
+          
+  
+  Curso
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Guías
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-nav__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    Taller de Introducción a Linux
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curso
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curso
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_01_Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 01 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_02_Conoce_tu_servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 02 Conoce tu servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_03_Navegaci%C3%B3n_b%C3%A1sica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 03 Navegación básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_04_Ejecuci%C3%B3n_como_administrador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 04 Ejecución como administrador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_05_Instalaci%C3%B3n_de_software_y_exploraci%C3%B3n_del_sistema_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 05 Instalación de software y exploración del sistema de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_06_Herramientas_de_visualizaci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 06 Herramientas de visualización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_07_Edici%C3%B3n_con_%22vim%22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 07 Edición con "vim"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_08_Servidores_y_sus_servicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 08 Servidores y sus servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_09_Procesamiento_de_texto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 09 Procesamiento de texto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_10_Redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 10 Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_11_Automatizaci%C3%B3n_de_tareas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 11 Automatización de tareas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_12_B%C3%BAsqueda_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 12 Búsqueda de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_13_Transferencia_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 13 Transferencia de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_14_Gesti%C3%B3n_de_usuarios_y_grupos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 14 Gestión de usuarios y grupos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_15_Gesti%C3%B3n_de_permisos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 15 Gestión de permisos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_16_Repositorios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 16 Repositorios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_17_Archivado_y_compresi%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 17 Archivado y compresión
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_18_Compilaci%C3%B3n_desde_c%C3%B3digo_fuente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 18 Compilación desde código fuente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_19_Rotaci%C3%B3n_de_registros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 19 Rotación de registros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_20_Gesti%C3%B3n_avanzada_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 20 Gestión avanzada de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_21_Scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 21 Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_22_Conclusiones_y_pr%C3%B3ximos_pasos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 22 Conclusiones y próximos pasos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Guías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#registro-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registro en AWS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ingreso-y-configuracion-del-servicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingreso y configuración del servicio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ingreso y configuración del servicio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-and-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Name and tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-and-os-images-amazon-machine-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application and OS Images (Amazon Machine Image)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-pair-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key pair (login)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network settings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detener-o-eliminar-instancia-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detener o Eliminar instancia EC2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detener o Eliminar instancia EC2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accede-a-la-consola-de-administracion-de-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accede a la consola de administración de AWS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navega-hacia-el-dashboard-ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navega hacia el dashboard EC2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localice-la-instancia-deseada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Localice la instancia deseada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detener-una-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detener una instancia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-una-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminar una instancia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtener-la-ip-de-tu-vps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtener la IP de tu VPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usuario-por-defecto-para-conexiones-remotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usuario por defecto para conexiones remotas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git_y_Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y Github
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtualbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>AWS</h1>
+
+<h2 id="registro-en-aws">Registro en AWS</h2>
+<p>Para registrarse, debes dirigirte al siguiente <a href="https://portal.aws.amazon.com/billing/signup?nc2=h_ct&amp;src=header_signup&amp;redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email">enlace</a>.</p>
+<p>En él, debes proporcionar una dirección de correo electrónico y un nombre de usuario, como se muestra en la siguiente imagen:</p>
+<p><img alt="IMG-01" src="../../assets/gaws_01.png" /></p>
+<p>Una vez hayas llenado la información solicitada, haz clic en el botón "Verify Email Address". Luego, accede a tu cuenta de correo electrónico, donde deberías encontrar un mensaje en tu bandeja de entrada con el asunto "AWS Email Verification". Dentro de este mensaje, encontrarás un código de 6 dígitos que será válido por 10 minutos. Introduce este código en el sitio web de AWS.</p>
+<p><img alt="IMG-02" src="../../assets/gaws_02.png" /></p>
+<p>Una vez que la plataforma haya confirmado tu cuenta de correo electrónico, te guiará a través de un proceso de registro en 5 pasos:</p>
+<ol>
+<li>Crea una contraseña.</li>
+<li>Proporciona tu información de contacto.</li>
+<li>Información de pago.</li>
+<li>Código de confirmación SMS.</li>
+<li>Selecciona el tipo de plan de soporte técnico. Seleccionaremos "Basic Support" porque es gratuito.</li>
+</ol>
+<p>Después de proporcionar la información solicitada, habrás creado tu cuenta de AWS y verás la siguiente pantalla:</p>
+<p><img alt="IMG-03" src="../../assets/gaws_03.png" /></p>
+<p>Para ingresar, puedes hacer clic en el botón "Go to the AWS Management Console" o seguir este <a href="https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-2_191a2fdcbb021b68&amp;client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&amp;forceMobileApp=0&amp;code_challenge=BjkNd54AofbS7VIXYxd4OjQ8vBCBIh3p2GE7XcI-fcc&amp;code_challenge_method=SHA-256">enlace</a>.</p>
+<hr />
+<h2 id="ingreso-y-configuracion-del-servicio">Ingreso y configuración del servicio</h2>
+<p>La página de ingreso de AWS se ve de la siguiente manera:</p>
+<p><img alt="IMG-04" src="../../assets/gaws_04.png" /></p>
+<p>Notarás que puedes ingresar de dos maneras. Por ahora, solo trabajaremos con la opción "Root User". Para ello, ingresa tu correo electrónico y haz clic en "next". En la siguiente ventana, ingresa tu contraseña y haz clic en "Sign in".</p>
+<p><img alt="IMG-05" src="../../assets/gaws_05.png" /></p>
+<p>La ventana principal de la plataforma se ve de la siguiente manera: </p>
+<p><img alt="IMG-06" src="../../assets/gaws_06.png" /></p>
+<p>Para desplegar nuestro servidor debemos elegir el servicio correspondiente, para ello da click en el menú "Services" situado en la esquina superior izquierda junto al logo de AWS, ahí se desplegará una lista de categorías, busque la categoría "Compute" y da click en ella, las opciones se actualizarán y elegiremos el servicio "EC2" que es un VPS.</p>
+<p><img alt="IMG-07" src="../../assets/gaws_07.png" /></p>
+<p>Una vez hemos elegido el servicio a desplegar (EC2) la plataforma nos mostrará un dashboard nuevo con muchas opciones que nos pueden resultar extrañas, lo único que buscamos en ese nuevo panel es un botón naranja que dice "Launch instance".</p>
+<p><img alt="IMG-09" src="../../assets/gaws_08.png" /></p>
+<hr />
+<p>En cuanto demos click en dicho botón cargará una nueva página que nos pemitirá configurar los parámetros de nuestro servidor, las secciones son las siguientes:</p>
+<ul>
+<li>Name and tags</li>
+<li>Application and OS Images (Amazon Machine Image)</li>
+<li>Instance type</li>
+<li>Key pair (login)</li>
+<li>Network settings</li>
+<li>Configure storage  </li>
+<li>Advanced details</li>
+</ul>
+<h3 id="name-and-tags">Name and tags</h3>
+<p>En este apartado debemos escribir un nombre con el que podamos identificar a este VPS en particular, en mi caso use "Servidor Prueba UPIICSA".</p>
+<p><img alt="IMG-10" src="../../assets/gaws_10.png" /></p>
+<hr />
+<h3 id="application-and-os-images-amazon-machine-image">Application and OS Images (Amazon Machine Image)</h3>
+<div class="admonition danger">
+<p class="admonition-title">Es importante el SO</p>
+<p>Sistemas Operativos como Windows Server podrían implicar costes de licencias que debes contemplar. </p>
+</div>
+<p>Aquí debemos seleccionar el sistema operativo que será instalado en nuestro servidor, para este taller usaremos "Ubuntu Server LTS", para seleccionarlo basta con dar click en el icono de Ubuntu debajo de la pestaña "Quick Start" y podremos corroborar que sea nuestra imagen deseada en "Amazon Machine Image (AMI)".</p>
+<p>Tu selección debería verse muy similar al contenido mostrado en la siguiente imagen:</p>
+<p><img alt="IMG-11" src="../../assets/gaws_11.png" /></p>
+<hr />
+<h3 id="instance-type">Instance type</h3>
+<p>En este apartado configuraremos los recursos de hardware con los que contará nuestro VPS, el tipo de máquina que AWS nos da para pruebas gratuitas (Free tier) es el <strong>t2.micro</strong>, se muy cuidadoso de elegir ese tipo de instancia. </p>
+<p><img alt="IMG-12" src="../../assets/gaws_12.png" /></p>
+<div class="admonition danger">
+<p class="admonition-title">Cuidado con el Instance type</p>
+<p>Es importante elegir una instancia que entre en el <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;awsf.Free%20Tier%20Types=*all&amp;awsf.Free%20Tier%20Categories=*all">free tier</a> para no incurrir en cargos no deseados.</p>
+<p>AWS especifica que nos regala 750 horas (Aproximadamente un mes) de una instancia t2.micro con su respectiva IPv4, se cuidadoso de monitorear no sobrepasar las 750 horas para evitar cargos, que se harán en automático a tu tarjeta y serán dificiles de cancelar.  </p>
+</div>
+<hr />
+<h3 id="key-pair-login">Key pair (login)</h3>
+<p>Da click en la opción "Create new key pair".</p>
+<p>Se desplegará una nueva ventana en ella debemos establecer lo siguiente:</p>
+<ul>
+<li>"Key pair name", en mi caso id_rsa_UPIICSA_2NV20, tu la puedes llamar como prefieras pero te sugiero que le pongas el mismo nombre. </li>
+<li>"Key pair type", selecciona "RSA"</li>
+<li>Private key file format, selecciona ".pem"</li>
+</ul>
+<p>Cuando valides que tus datos son correctos, da click en "Create key pair".</p>
+<p><img alt="IMG-18" src="../../assets/gaws_18.png" /></p>
+<p>En automático se cerrará la ventana emergente con la que estabas trabajando, se descargará un archivo con el nombre que acabas de escribir y la extensión .pem, además de que se seleccionará en automático la clave que acabas de crear como la clave de conexión a este VPS.</p>
+<p><img alt="IMG-19" src="../../assets/gaws_19.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Clave de ingreso</p>
+<p>El archivo recien descargado es la clave mediante la cual seremos capaces de ingresar al servidor, es muy importante que NO la borres o pierdas. </p>
+</div>
+<hr />
+<h3 id="network-settings">Network settings</h3>
+<p>En esta sección recomendamos confirmar los parámetros que vienen por defecto sin modificar. </p>
+<p>Debemos verificar que los siguientes parámetros sí tengan estos valores:</p>
+<ul>
+<li>"Auto-assign public IP" debe estar en "Enable".</li>
+<li>"Firewall (security groups)" debe tener seleccionada la opción "Create security group".</li>
+<li>Tu security group debe permitir el tráfico SSH, para esto seleccionamos la casilla "Allow SSH traffic from" y por defecto tendrá el valor "Anywhere (0.0.0.0/0)".</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Permitir tráfico SSH</p>
+<p>El último valor dice que permitiremos que se establezca una conexión remota mediante el protocolo SSH, es decir que ejecuten comandos en nuestro servidor mediante una terminal remota, la dirección 0.0.0.0/0 es un comodín equivalente a decir "cualquier IP", entonces cualquier IP puede tener una sesión remota con nuestro servidor, esto incluye tu universidad, tu casa,algún aeropuerto, alguna cafetería, la oficina de un hacker... </p>
+<p>Podras notar que la última opción es un poco inquietante, por ello en entornos de producción reales en lugar de emplear un comodín se recomienda poner nuestra IP exacta, en este momento lo puedes dejar de esta manera, pero debes saber que existe el riesgo de ser hackeado.  </p>
+</div>
+<p><img alt="IMG-13" src="../../assets/gaws_13.png" /></p>
+<hr />
+<h3 id="configure-storage">Configure storage</h3>
+<p>Aquí asegúrate que los parametros sean iguales a los de la imagen adjunta (deberían serlo porque son los parámetros por defecto).</p>
+<p><img alt="IMG-15" src="../../assets/gaws_15.png" /></p>
+<hr />
+<h3 id="advanced-details">Advanced details</h3>
+<p>Por el momento no modificaremos nada en esta sección. </p>
+<hr />
+<h3 id="summary">Summary</h3>
+<p>Una vez terminemos de ajustar nuestro VPS, verifiquemos que el recuadro de "Summary" tenga los siguientes datos:</p>
+<p><img alt="IMG-16" src="../../assets/gaws_16.png" /></p>
+<p>Si todo está correcto, da click en el botón "Launch Instance".</p>
+<p>Después de unos segundos deberías ver un mensaje que indique que tu instancia se inició de forma exitosa. 
+<img alt="IMG-17" src="../../assets/gaws_17.png" /></p>
+<p>Si has llegado hasta este punto de la guía sin tener problemas, felicidades configuraste tu primer VPS en AWS de forma exitosa, ya está disponible para que trabajes con él. </p>
+<p>En el <a href="../../Curso/M%C3%B3dulo_02_Conoce_tu_servidor/">Módulo 2 - Conoce tu servidor</a> aprenderas como conectarte de manera remota para ocuparlo. </p>
+<p>Es muy importante que sepas como <strong>detener tu servidor</strong> porque solo puedes tenerlo prendido 750 horas sin generar cargos, tambien es importante que sepas como <strong>eliminarlo</strong> para que no te cobren por él una vez termines el taller, a continuación habrá dos secciones que te enseñarán a realizar estas dos acciones. </p>
+<h2 id="detener-o-eliminar-instancia-ec2">Detener o Eliminar instancia EC2</h2>
+<h3 id="accede-a-la-consola-de-administracion-de-aws">Accede a la consola de administración de AWS</h3>
+<p>Dirigete a la siguiente <a href="https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2">página</a> (es posible que te pida ingresar tus credenciales), una vez que estés dentro verás una página similar a la siguiente:</p>
+<p><img alt="IMG-20" src="../../assets/gaws_20.png" /></p>
+<h3 id="navega-hacia-el-dashboard-ec2">Navega hacia el dashboard EC2</h3>
+<p>Hay diferentes maneras de llegar desde la consola principal al dashboard del servicio deseado, nosotros primero daremos click en el menú con tres líneas horizontales paralelas situado en la esquina superior izquierda, debajo del logo de AWS, ahí nos desplegará un menú con el título "Console Home".</p>
+<p><img alt="IMG-21" src="../../assets/gaws_21.png" /></p>
+<p>En dicho menú selecciona la opción "All Services", esto cambiará el contenido mostrado en el panel derecho de la aplicación, ahí busca la categoría "Compute" y en ella el servicio "EC2".</p>
+<p><img alt="IMG-22" src="../../assets/gaws_22.png" /></p>
+<p>La ventana se actualizará y lo que vemos ahora es el dashboard del servicio EC2.</p>
+<p><img alt="IMG-23" src="../../assets/gaws_23.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Resumen de recursos</p>
+<p>En el panel "Resources" podrá ver un cuadro con la cantidad de recursos que están asociados a su cuenta en cierta zona, si ha seguido esta guía únicamente y no tiene proyectos adicionales debería tener los siguientes recursos listados:</p>
+<ul>
+<li>Instances (Running) 1 </li>
+<li>Instances 1</li>
+<li>Key pairs 1</li>
+<li>Security Groups 2</li>
+<li>Volumes 1 </li>
+</ul>
+<p><img alt="IMG-24" src="../../assets/gaws_24.png" /></p>
+</div>
+<h3 id="localice-la-instancia-deseada">Localice la instancia deseada</h3>
+<p>Para listar nuestras instancias podemos dar click en la opción "Instances" situada en el menú lateral izquierdo o en la opción "Instances" del panel con el resumen de recursos. </p>
+<p><img alt="IMG-25" src="../../assets/gaws_25.png" /></p>
+<p>El sitio se actualizará y nos mostrará nuestras instancias.</p>
+<p><img alt="IMG-26" src="../../assets/gaws_26.png" /></p>
+<h3 id="detener-una-instancia">Detener una instancia</h3>
+<div class="admonition note">
+<p class="admonition-title">asegúrate de seleccionar la instancia correcta</p>
+<p>Para operar con una instancia primero asegúrate que sea la correcta, valida que el nombre en la columna "Name" corresponda con el VPS que quieres operar.</p>
+</div>
+<p>Una vez identificada la instancia bastará con dar click derecho en cualquier parte de la fila que representa la instancia, y en el menú que se despliega seleccionar la opción "Stop instance".</p>
+<p><img alt="IMG-27" src="../../assets/gaws_27.png" /></p>
+<p>Emergerá una ventana para confirmar nuestra acción, da click en el botón que dice "Stop".</p>
+<p><img alt="IMG-28" src="../../assets/gaws_28.png" /></p>
+<p>Después de unos segundos deberá ver que la operación se completó exitosamente y que el estado de la instancia cambió a "stopped".</p>
+<p><img alt="IMG-29" src="../../assets/gaws_29.png" /></p>
+<p>El proceso para volver a activar la instancia es análogo, solo selecciona la opción "Start Instance".</p>
+<p><img alt="IMG-30" src="../../assets/gaws_30.png" /></p>
+<h3 id="eliminar-una-instancia">Eliminar una instancia</h3>
+<div class="admonition danger">
+<p class="admonition-title">La irreversibilidad de la acción Terminate</p>
+<p>Una vez que hayas terminado una instancia NO hay manera de recuperarla, así que solo realiza este proceso cuando estés seguro de que no ocuparás el VPS en absoluto y no representa ninguna pérdida de información.</p>
+</div>
+<p>Antes de eliminar una instancia asegúrate de haberla detenido, una vez esté detenida deberás dar click derecho en cualquier parte de la fila que representa la instancia, y en el menú que se despliega seleccionar la opción "Terminate instance".</p>
+<p><img alt="IMG-31" src="../../assets/gaws_31.png" /></p>
+<p>Emergerá una ventana para confirmar nuestra acción, da click en el botón que dice "Terminate".</p>
+<p><img alt="IMG-32" src="../../assets/gaws_32.png" /></p>
+<p>Al poco tiempo el estado de nuestra instancia cambiará a "Terminated" y después de unas horas ya no la veremos en nuestro listado de instancias. </p>
+<p><img alt="IMG-33" src="../../assets/gaws_33.png" /></p>
+<p>Si vuelve a dirigirse al dashboard de EC2 verá que los recursos diminuyeron en uno, excepto por la cantidad de instancias, esto es porque aún no se ve reflejado totalmente el cambio, pero después de una horas tambien se descontará esa instancia. </p>
+<p><img alt="IMG-34" src="../../assets/gaws_34.png" /></p>
+<h2 id="obtener-la-ip-de-tu-vps">Obtener la IP de tu VPS</h2>
+<p>Conocer la IP de tu VPS es crucial para poder conectarte a él.</p>
+<p>Hacerlo es muy sencillo, identifica la instancia de la que quieres saber los detalles y da click en el hipervínculo azul situado en la columna "Instance ID".</p>
+<p><img alt="IMG-35" src="../../assets/gaws_35.png" /></p>
+<p>El sitio se actualizará y la información de la IP se verá en el recuadro "Public IPv4 address".</p>
+<p><img alt="IMG-35" src="../../assets/gaws_36.png" /></p>
+<h2 id="usuario-por-defecto-para-conexiones-remotas">Usuario por defecto para conexiones remotas</h2>
+<p>Este dato no se configuró en ningún punto, pero la imagen de Ubuntu Server usada en AWS tiene por defecto al usuario <code>ubuntu</code> como el usuario administrador.</p>
+<h2 id="conclusion">Conclusión</h2>
+<p>Este material te puede servir como una muy básica guía de referencia para implementar servidores VPS en la plataforma AWS, te recomendamos que solo mantengas el servidor activo el tiempo que planes estudiar con él para evitar consumir tus 750 horas, para ello consulta el apartado "Detener o Eliminar instancia EC2" las veces que requieras.</p>
+<p>Dirigete al <a href="../../Curso/M%C3%B3dulo_02_Conoce_tu_servidor/">Módulo 2 - Conoce tu servidor</a> para continuar con el taller.</p>
+<div class="admonition tip">
+<p class="admonition-title">Aún hay más...</p>
+<p>Esta no es la única manera de interactuar con AWS, te invitamos a que investigues qué es la CloudShell de AWS.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/LPUMOGO22"  target="_blank" rel="noopener">Luis Enrique Mora Gómez</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/FVCW5mBQVs" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LPUMOGO22" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mora-gómez-luis-enrique-5a7411221/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1427 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lpumogo22.github.io/upiicsa-linux/Curso/M%C3%B3dulo_01_Introducci%C3%B3n/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../M%C3%B3dulo_02_Conoce_tu_servidor/">
+      
+      
+      <link rel="icon" href="../../assets/lin.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Módulo 01 Introducción - Taller de Introducción a Linux</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Módulo 01 Introducción - Taller de Introducción a Linux" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Curso/Módulo_01_Introducción.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://lpumogo22.github.io/upiicsa-linux/Curso/M%C3%B3dulo_01_Introducci%C3%B3n/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Módulo 01 Introducción - Taller de Introducción a Linux" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Curso/Módulo_01_Introducción.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#un-poco-de-contexto" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-header__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taller de Introducción a Linux
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Módulo 01 Introducción
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Curso
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Gu%C3%ADas/AWS/" class="md-tabs__link">
+          
+  
+  Guías
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-nav__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    Taller de Introducción a Linux
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Curso
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curso
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Módulo 01 Introducción
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 01 Introducción
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-poco-de-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un poco de contexto ...
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-inicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo inicio?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo inicio?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-un-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es un servidor?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-alternativas-tengo-para-montar-mi-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué alternativas tengo para montar mi servidor?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué alternativas tengo para montar mi servidor?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manera-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manera nativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-nuestro-servidor-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear nuestro servidor en la nube
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-nuestro-servidor-de-forma-local-usando-nuestro-so-actual-como-anfitrion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear nuestro servidor de forma local usando nuestro SO actual como anfitrión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-alternativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen de alternativas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_02_Conoce_tu_servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 02 Conoce tu servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_03_Navegaci%C3%B3n_b%C3%A1sica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 03 Navegación básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_04_Ejecuci%C3%B3n_como_administrador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 04 Ejecución como administrador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_05_Instalaci%C3%B3n_de_software_y_exploraci%C3%B3n_del_sistema_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 05 Instalación de software y exploración del sistema de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_06_Herramientas_de_visualizaci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 06 Herramientas de visualización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_07_Edici%C3%B3n_con_%22vim%22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 07 Edición con "vim"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_08_Servidores_y_sus_servicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 08 Servidores y sus servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_09_Procesamiento_de_texto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 09 Procesamiento de texto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_10_Redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 10 Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_11_Automatizaci%C3%B3n_de_tareas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 11 Automatización de tareas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_12_B%C3%BAsqueda_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 12 Búsqueda de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_13_Transferencia_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 13 Transferencia de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_14_Gesti%C3%B3n_de_usuarios_y_grupos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 14 Gestión de usuarios y grupos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_15_Gesti%C3%B3n_de_permisos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 15 Gestión de permisos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_16_Repositorios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 16 Repositorios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_17_Archivado_y_compresi%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 17 Archivado y compresión
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_18_Compilaci%C3%B3n_desde_c%C3%B3digo_fuente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 18 Compilación desde código fuente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_19_Rotaci%C3%B3n_de_registros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 19 Rotación de registros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_20_Gesti%C3%B3n_avanzada_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 20 Gestión avanzada de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_21_Scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 21 Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_22_Conclusiones_y_pr%C3%B3ximos_pasos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 22 Conclusiones y próximos pasos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/AWS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/Django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/Git_y_Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y Github
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/virtualbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Módulo 01 Introducción</h1>
+
+<h2 id="un-poco-de-contexto">Un poco de contexto ...</h2>
+<p>Te sugerimos ver el siguiente video para saber a qué nos referimos cuando hablamos de "Linux", basta con dar click en el pingüino para ser redirigido a youtube.</p>
+<p><a href="https://youtu.be/UUJ0dFpj1-M?si=1lh77wVrG1_vsftY" title="Entiende Linux y el Software Libre de una vez"><img alt="IMAGE ALT TEXT" src="../../assets/linportada.png" /></a></p>
+<p>Una vez termines de ver el video, ingresa al sitio <a href="https://roadmap.sh/">roadmap.sh</a> donde encontrarás diferentes rutas de aprendizaje basadas en los roles que se usan actualmente en la industria de las tecnologías de la información (TI). </p>
+<p>Ahí, consulta las siguientes rutas (no es necesario leer todo el contenido, puedes filtrar con la opción de búsqueda de texto en tu navegador):</p>
+<ul>
+<li><a href="https://roadmap.sh/frontend">Frontend</a></li>
+<li><a href="https://roadmap.sh/backend">Backend</a></li>
+<li><a href="https://roadmap.sh/full-stack">Full Stack</a></li>
+<li><a href="https://roadmap.sh/devops">DevOps</a></li>
+<li><a href="https://roadmap.sh/software-architect">Software Architect</a></li>
+<li><a href="https://roadmap.sh/cyber-security">Cyber Security</a></li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Actividad 1</p>
+<p>Identifica en cuántas y cuáles rutas se menciona a Linux como una tecnología que se debe aprender (en una ruta no se menciona a Linux como tal sino como LXC).</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Actividad 2</p>
+<p>De los roles que sí requieren saber Linux, selecciona uno y busca en <a href="https://www.linkedin.com">LinkedIn</a> un puesto de trabajo relacionado, cuyo salario sea visible para compartirlo con tus compañeros.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Actividad 3</p>
+<p>Reflexiona lo siguiente: ¿Crees que Linux sea una tecnología que valga la pena aprender para futuros profesionales de TI?</p>
+</div>
+<hr />
+<h2 id="como-inicio">¿Cómo inicio?</h2>
+<p>El primer requisito para estudiar administración de servidores Linux es contar con un servidor Linux.</p>
+<p>Antes de tener el nuestro, vale la pena repasar algunos conceptos fundamentales.</p>
+<h3 id="que-es-un-servidor">¿Qué es un servidor?</h3>
+<p>Un servidor es una pieza de software o hardware que provee funcionalidades (llamadas servicios) para otros programas o dispositivos (llamados clientes).</p>
+<div class="admonition note">
+<p class="admonition-title">Acotando la definición para propósitos de esta lección</p>
+<p>En este momento, al hablar de un "servidor Linux", nos referimos a una computadora que tiene instalado un sistema operativo Linux cuyo propósito será proveer servicios que nosotros configuraremos.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Actividad 4</p>
+<p>Investiga tres servicios que pueda proveer un servidor Linux. </p>
+</div>
+<h3 id="que-alternativas-tengo-para-montar-mi-servidor">¿Qué alternativas tengo para montar mi servidor?</h3>
+<h4 id="manera-nativa">Manera nativa</h4>
+<p>La manera más evidente para tener un servidor es <strong>instalar el SO en nuestra máquina</strong>, el proceso de manera muy resumida consta de cargar la imagen del sistema operativo en un medio de almacenamiento, configurar dicho medio para que se pueda detectar como un dispositivo de arranque, encender la computadora y dejar que inicie con el medio de almacenamiento que configuramos, la mayoría de las imagenes cuentan con una instalación gráfica donde se seleccionarán unos parámetros mínimos y el sistema operativo se instalará en el disco duro de nuestro equipo. </p>
+<p>Esta opción es factible pero conlleva algunas desventajas:</p>
+<ul>
+<li>
+<p>Si el equipo cuenta con otro sistema operativo previo a nuestra instalación y no configuramos nuestros parámetros correctamente podemos dañar al sistema original.</p>
+</li>
+<li>
+<p>En caso de instalar ambos sistemas correctamente (dual boot), solo podremos usar un sistema a la vez y cambiarlos requerirá reiniciar el equipo y seleccionar el sistema que queremos usar. </p>
+</li>
+<li>
+<p>En caso de no querer tener dual boot tendríamos que invertir en un equipo de computo para que fuese exclusivamente nuestro servidor. </p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Es importante conocer el proceso de instalación nativa</p>
+<p>Pese a las desventajas mencionadas, es importante conocer este proceso de instalación porque habrá entornos en los que esta opción sea la más viable, por ello, al final del taller se hará una demostración de cómo instalar Debian de manera nativa, a los usuarios para los cuales la instalación nativa no sea novedad, los invitamos a que intenten instalar Arch Linux para que entiendan más acerca del proceso que hacen los instaladores automáticos. </p>
+</div>
+<p>Por lo anteriormente expuesto no consideramos conveniente que los miembros del taller instalen el SO directamente en sus equipos y proponemos dos vías principales como alternativas:</p>
+<ul>
+<li><strong>Crear nuestro servidor en la nube</strong></li>
+<li><strong>Crear nuestro servidor de forma local usando nuestro SO actual como anfitrión</strong></li>
+</ul>
+<p>Dichas alternativas a su vez se dividen en diferentes formas de conseguir nuestro objetivo.</p>
+<h4 id="crear-nuestro-servidor-en-la-nube">Crear nuestro servidor en la nube</h4>
+<p>No entraremos en mucho detalle teórico acerca de qué es la nube, te sugerimos ver el siguiente video si el concepto de no te es para nada familiar.</p>
+<p><a href="https://youtu.be/1rTs-tSqqv8?si=5O4J40wAmptlEqc-" title="¿Qué es realmente el Cloud?"><img alt="IMAGE ALT TEXT" src="../../assets/nube.png" /></a></p>
+<p>Cuando hablamos de "<em>crear nuestro servidor en la nube</em>" nos referimos a que en un centro de datos situado en algún lugar del mundo, un servidor físico que corre Linux de manera nativa es "dividido" en decenas de servidores virtuales, que son rentados para que usuarios como nosotros puedan usarlos desde cualquier sitio con acceso a internet, cada una de esas divisiones es conocida como un VPS (Virtual Private Server).</p>
+<p>Como consecuencia es posible tener un pequeño servidor en Internet configurado de manera casi inmediata y a un costo muy bajo mediante la renta de un VPS (Virtual Private Server).</p>
+<p>Los proveedores más grandes son AWS, AZURE y GCP, sin embargo, tambien son los más caros.</p>
+<details class="warning">
+<summary>¿Cuál es el mejor VPS?</summary>
+<p>Es muy probable que a lo largo de tu carrera y vida profesional debas trabajar con más de un proveedor, así que sugerimos experimentes un poco con todos y te especialices en aquel que exija tu entorno laboral.</p>
+</details>
+<p>Casi todos tienen un plan de introducción para que conozcas su plataforma al que llaman "Free Tier", en él te dan créditos para que hagas uso de sus servicios sin tener que pagar, es importante que consideres que el acceso a cualquiera de estos proveedores involucra vincular una tarjeta de crédito y el uso descuidado de la plataforma puede implicar cargos reales de los cuales no nos hacemos responsables.  </p>
+<p>A continuación te dejamos una tabla comparativa de precios aproximados de las siguientes plataformas:</p>
+<ul>
+<li>AWS</li>
+<li>Azure</li>
+<li>Google Cloud Platform (GCP)</li>
+<li>Digital Ocean</li>
+<li>Linode</li>
+<li>Vultr</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Proveedor</th>
+<th>Instancia Sugerida</th>
+<th>vCPU</th>
+<th>Memoria</th>
+<th>Almacenamiento</th>
+<th>Precio mensual USD</th>
+<th>Creditos de prueba USD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS</td>
+<td>t2.micro</td>
+<td>1</td>
+<td>1 GB</td>
+<td>8 GB SSD</td>
+<td>$18.27</td>
+<td>Los que se consuman por un año de dicho servicio</td>
+</tr>
+<tr>
+<td>AZURE</td>
+<td>B1</td>
+<td>1</td>
+<td>1 GB</td>
+<td>30 GB SSD</td>
+<td>$12.26</td>
+<td>Gratis por 750 horas que se pueden usar dentro de un año</td>
+</tr>
+<tr>
+<td>GCP</td>
+<td>e2-micro</td>
+<td>1</td>
+<td>1 GB</td>
+<td>10 GB SSD</td>
+<td>$ 7.11</td>
+<td>$300 que se pueden usar a lo largo de 90 días</td>
+</tr>
+<tr>
+<td>Digital Ocean</td>
+<td>Basic Plan</td>
+<td>1</td>
+<td>1 GB</td>
+<td>25 GB SSD</td>
+<td>$6.00</td>
+<td>$200 que se pueden usar a lo largo de 60 días</td>
+</tr>
+<tr>
+<td>Linode</td>
+<td>Nanode 1GB</td>
+<td>1</td>
+<td>1 GB</td>
+<td>25 GB SSD</td>
+<td>$5.00</td>
+<td>$100 que se pueden usar a lo largo de 60 días</td>
+</tr>
+<tr>
+<td>Vultr</td>
+<td>Cloud Compute - Regular</td>
+<td>1</td>
+<td>1 GB</td>
+<td>25 GB SSD</td>
+<td>$5.00</td>
+<td>$250 que se pueden usar a lo largo de 30 días</td>
+</tr>
+</tbody>
+</table>
+<h4 id="crear-nuestro-servidor-de-forma-local-usando-nuestro-so-actual-como-anfitrion">Crear nuestro servidor de forma local usando nuestro SO actual como anfitrión</h4>
+<p>Es difícil crear un servidor en la nube si no se cuenta con una tarjeta de crédito. Además, nuestra inexperiencia nos puede llevar a incurrir en cargos no deseados. Si no se tiene acceso a internet (como es el caso de las sesiones presenciales de este taller), es complicado trabajar con un servidor en la nube. Por ello, también vemos factible trabajar estas prácticas en nuestro entorno local.</p>
+<div class="admonition warning">
+<p class="admonition-title">Saber trabajar en la nube es MUY importante</p>
+<p>Te invitamos a que comiences a trabajar en la nube lo más pronto posible, porque son las tecnologías más usadas en la vida real; los pros superan bastante a los contras en este aspecto.</p>
+</div>
+<p>Dentro del ámbito local, podemos optar por las siguientes maneras de instalar Linux:</p>
+<ul>
+<li><strong>Máquina Virtual (Virtualización)</strong></li>
+<li><strong>Contenedor Docker</strong></li>
+<li><strong>Usar WSL (solo aplica para computadoras Windows)</strong></li>
+</ul>
+<p>Consideramos que vale la pena enfocarnos más en las primeras dos tecnologías.</p>
+<p>Comencemos con la definición del término <em>virtual</em>. Según la RAE, el término refiere a algo "<em>que tiene existencia aparente y no real</em>".</p>
+<p>En nuestro contexto, hablar de una máquina virtual es hablar de una máquina que existe de forma aparente mediante un software que nos permite emularla. No es real porque no la podemos tocar, a diferencia del equipo con el que estamos trabajando, pero existe dentro de nuestro equipo.</p>
+<p>La virtualización de máquinas, a muy <em>grosso modo</em>, consta de la <strong>simulación de un sistema operativo completo</strong> con su propio kernel, drivers, programas y aplicaciones. Esto es muy útil muchas veces; por ejemplo, en un <strong>entorno de pruebas</strong> donde instalamos malware, nos interesa que no sea en nuestra computadora porque no sabemos el daño que pueda causar, y nos interesa que el sistema sea un sistema operativo completo para saber el alcance real del malware. Ahí, las prestaciones de una máquina virtual resultan bastante útiles. Sin embargo, hay casos donde no son la opción más óptima.</p>
+<p>Suponga que está desarrollando una aplicación con tres componentes principales: un frontend hecho con React, una API hecha con Python y una base de datos PostgreSQL. Dicha aplicación requiere la instalación de <em>NodeJS</em>, <em>Python</em> y <em>PostgreSQL</em>. Ahora, suponga que un colega desarrollador va a ayudarlo, él también ha hecho proyectos con dichas tecnologías. </p>
+<p>El gran pero aquí es: ¿Cómo sabrá que las versiones que tienen instaladas son compatibles entre sí? Piense que él puede tener <em>PostgreSQL 13</em> y usted <em>PostgreSQL 16</em>. No es factible que usted haga el downgrade (cambio a una versión inferior) porque puede perder funcionalidad, tampoco lo es que él haga el upgrade (cambio a una versión superior) porque implicaría migrar sus proyectos existentes y dicha tarea puede implicar mucho tiempo que no está presupuestado. </p>
+<p>Ahí es donde la virtualización podría ser la solución. Si cada uno crea una máquina virtual (VM) con la misma versión de <em>PostgreSQL</em> exclusiva para este proyecto, podrían desarrollar sin problemas. No obstante, la creación de las VMs implica que cada una tendrá su propio kernel, sus drivers, sus programas y sus aplicaciones, lo que conllevaría un largo tiempo de instalación, un tiempo de arranque considerable y consumiría bastantes recursos en cada una de las computadoras (piense que el mismo hardware debe correr el SO original y el SO virtual), y no perdamos de vista que no bastará con una única VM por todo el desarrollo, sino una por cada componente. Falta solucionar el mismo problema para <em>NodeJS</em> y <em>Python</em>.</p>
+<p>Es decir, para que no tengamos problemas de versiones sin afectar a otros desarrollos, cada uno de los programadores debería tener corriendo tres VMs además del sistema operativo original, lo que sería una pesadilla para nuestro hardware.</p>
+<p>La solución a la situación descrita anteriormente se llama <strong>contenedor</strong>. Un contenedor, en términos simples, es un conjunto de procesos aislados que nos permite correr cada uno de nuestros componentes de manera independiente de la forma más óptima posible.</p>
+<p>Piense que si me interesa usar <em>Python 3.10</em>, no requiero instalar y ejecutar de nuevo una máquina completa, sino solamente <em>Python 3.10</em> y las dependencias que este requiera para funcionar. Es lo que hace un contenedor: genera un entorno virtual aislado de cualquier proceso en el SO anfitrión, pero sin instalar más que lo mínimamente necesario para funcionar.</p>
+<p>¿Por qué los contenedores son tan útiles?</p>
+<ul>
+<li><strong>Auto contenidos:</strong> Cada contenedor tiene todo lo que necesita para funcionar sin requerir de dependencias preinstaladas en la máquina anfitrión.</li>
+<li><strong>Aislados:</strong> Los contenedores tienen una influencia mínima o nula en el sistema anfitrión u otros contenedores.</li>
+<li><strong>Independientes:</strong> Cada contenedor se administra de forma independiente; borrar un contenedor no afectará a otros en absoluto.</li>
+<li><strong>Portables:</strong> Pueden correr donde sea. Si funciona bien en su computadora, funcionará bien en la de sus compañeros o incluso en la nube.</li>
+</ul>
+<hr />
+<h3 id="resumen-de-alternativas">Resumen de alternativas</h3>
+<p>Nuestra intención con la exposición anterior fue resaltar la importancia de cada una de estas tecnologías y por qué es relevante saber trabajar con todas ellas. Para este taller, sugerimos primero instalar el servidor utilizando la guía de VirtualBox y, si es posible, también desplegar el servidor en AWS.</p>
+<ol>
+<li>
+<p><a href="../../Gu%C3%ADas/virtualbox/">Guía VirtualBox.</a></p>
+</li>
+<li>
+<p><a href="../../Gu%C3%ADas/AWS/">Guía AWS.</a></p>
+</li>
+</ol>
+<p>Para cada alternativa, publicaremos la guía correspondiente, y tenemos la intención de ampliar dichas guías para cubrir la mayor cantidad de plataformas en la nube posible, hasta incluir todas las sugeridas en la tabla comparativa.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/LPUMOGO22"  target="_blank" rel="noopener">Luis Enrique Mora Gómez</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/FVCW5mBQVs" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LPUMOGO22" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mora-gómez-luis-enrique-5a7411221/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

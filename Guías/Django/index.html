@@ -1,0 +1,2592 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lpumogo22.github.io/upiicsa-linux/Gu%C3%ADas/Django/">
+      
+      
+        <link rel="prev" href="../AWS/">
+      
+      
+        <link rel="next" href="../Git_y_Github/">
+      
+      
+      <link rel="icon" href="../../assets/lin.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Django - Taller de Introducción a Linux</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Django - Taller de Introducción a Linux" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Guías/Django.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://lpumogo22.github.io/upiicsa-linux/Gu%C3%ADas/Django/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Django - Taller de Introducción a Linux" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Guías/Django.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#que-es-django" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-header__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taller de Introducción a Linux
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Django
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Curso/M%C3%B3dulo_01_Introducci%C3%B3n/" class="md-tabs__link">
+          
+  
+  Curso
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../AWS/" class="md-tabs__link">
+          
+  
+  Guías
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-nav__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    Taller de Introducción a Linux
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Curso
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curso
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_01_Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 01 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_02_Conoce_tu_servidor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 02 Conoce tu servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_03_Navegaci%C3%B3n_b%C3%A1sica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 03 Navegación básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_04_Ejecuci%C3%B3n_como_administrador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 04 Ejecución como administrador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_05_Instalaci%C3%B3n_de_software_y_exploraci%C3%B3n_del_sistema_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 05 Instalación de software y exploración del sistema de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_06_Herramientas_de_visualizaci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 06 Herramientas de visualización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_07_Edici%C3%B3n_con_%22vim%22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 07 Edición con "vim"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_08_Servidores_y_sus_servicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 08 Servidores y sus servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_09_Procesamiento_de_texto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 09 Procesamiento de texto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_10_Redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 10 Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_11_Automatizaci%C3%B3n_de_tareas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 11 Automatización de tareas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_12_B%C3%BAsqueda_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 12 Búsqueda de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_13_Transferencia_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 13 Transferencia de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_14_Gesti%C3%B3n_de_usuarios_y_grupos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 14 Gestión de usuarios y grupos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_15_Gesti%C3%B3n_de_permisos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 15 Gestión de permisos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_16_Repositorios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 16 Repositorios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_17_Archivado_y_compresi%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 17 Archivado y compresión
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_18_Compilaci%C3%B3n_desde_c%C3%B3digo_fuente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 18 Compilación desde código fuente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_19_Rotaci%C3%B3n_de_registros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 19 Rotación de registros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_20_Gesti%C3%B3n_avanzada_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 20 Gestión avanzada de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_21_Scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 21 Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Curso/M%C3%B3dulo_22_Conclusiones_y_pr%C3%B3ximos_pasos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 22 Conclusiones y próximos pasos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Guías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AWS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es Django?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Por qué Django?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-de-un-proyecto-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup de un proyecto Django
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup de un proyecto Django">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-la-carpeta-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la carpeta del proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#situarnos-en-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Situarnos en el proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un ambiente virtual
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de un ambiente virtual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MacOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activar-el-ambiente-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activar el ambiente virtual
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activar el ambiente virtual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MacOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Django
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalar Django">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizar pip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descargar-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descargar Django
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuestro-primer-proyecto-de-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nuestro primer proyecto de Django
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuestro primer proyecto de Django">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inicializacion-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inicialización de proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-de-servidor-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución de servidor de desarrollo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visitar-pagina-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visitar página de proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-una-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de una aplicación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-aplicacion-al-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir aplicación al proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generar-nuestra-primera-vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generar nuestra primera vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generar-nuestra-primera-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generar nuestra primera URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-las-urls-de-nuestra-app-al-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir las urls de nuestra app al proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guardemos-nuestro-proyecto-en-un-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guardemos nuestro proyecto en un repositorio remoto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuremos-nuestros-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuremos nuestros templates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuremos nuestros templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura por defecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-recomendada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura recomendada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuremos-nuestros-archivos-estaticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuremos nuestros archivos estáticos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuremos nuestros archivos estáticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-recomendada_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura recomendada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#probemos-nuestra-configuracion-de-templates-static" class="md-nav__link">
+    <span class="md-ellipsis">
+      Probemos nuestra configuración de templates-static
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crud" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRUD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CRUD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-del-modelo-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declaración del Modelo Categoría
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definicion-de-campos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de Campos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-__str__" class="md-nav__link">
+    <span class="md-ellipsis">
+      Método __str__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-completa-del-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declaración Completa del Modelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declaracion-del-modelo-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declaración del Modelo Producto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalles-relevantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detalles Relevantes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-en-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación en proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación en proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-y-aplicacion-de-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación y Aplicación de Migraciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear Migraciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-aplicar-migraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Aplicar Migraciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resumen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista-de-creacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista de Creación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vista-de-lectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista de Lectura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vista-de-actualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista de Actualización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vista-de-borrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista de Borrado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenido-del-fichero-viewspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contenido del fichero views.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Templates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Templates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de categoría
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listado-de-categorias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de categorías
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizacion-de-categorias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualización de categorias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borrado-de-categorias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borrado de categorias
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git_y_Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y Github
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtualbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h2 id="que-es-django">¿Qué es Django?</h2>
+<p>Django es un <code>framework web</code> gratuito y de código abierto escrito en el lenguaje de programación Python. Lanzado por primera vez en 2005, Django ha estado en desarrollo continuo desde entonces y hoy en día impulsa muchos de los sitios web más grandes del mundo, incluyendo Instagram, Pinterest, Bitbucket y Disqus. Al mismo tiempo, es lo suficientemente flexible como para ser una opción popular para startups en etapas iniciales y proyectos personales.</p>
+<h2 id="por-que-django">¿Por qué Django?</h2>
+<p>Un "framework web" es una colección de herramientas que abstraen gran parte de la dificultad y repetición inherente al desarrollo web.
+Por ejemplo, la mayoría de los sitios web necesitan la misma funcionalidad básica: la capacidad de conectarse a una base de datos, establecer rutas URL, mostrar contenido en una página, manejar la seguridad adecuadamente, y así sucesivamente. En lugar de recrear todo esto desde cero, los programadores a lo largo de los años han creado frameworks web en todos los principales lenguajes de programación: Django en Python, Rails en Ruby y Laravel en PHP, entre muchos otros.
+Django heredó el enfoque de Python de "baterías incluidas" e incluye soporte listo para usar para tareas comunes en el desarrollo web, incluyendo:</p>
+<ul>
+<li>Autenticación de usuarios</li>
+<li>Tests</li>
+<li>Modelos de bases de datos, formularios, rutas URL y templates</li>
+<li>Interfaz de administración</li>
+<li>Actualizaciones de seguridad y rendimiento</li>
+<li>Soporte para múltiples motores de bases de datos</li>
+</ul>
+<p>Este enfoque permite a los desarrolladores web centrarse en lo que hace única a una aplicación web en lugar de reinventar la rueda cada vez.</p>
+<hr />
+<h1 id="setup-de-un-proyecto-django">Setup de un proyecto Django</h1>
+<h2 id="creacion-de-la-carpeta-del-proyecto">Creación de la carpeta del proyecto</h2>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>~/Desktop/proyecto1Django
+</code></pre></div>
+<img alt="IMG-02" src="../../assets/gd_02.png" /></p>
+<h2 id="situarnos-en-el-proyecto">Situarnos en el proyecto</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>~/Desktop/proyecto1Django
+</code></pre></div>
+<p><img alt="IMG-03" src="../../assets/gd_03.png" /></p>
+<h2 id="creacion-de-un-ambiente-virtual">Creación de un ambiente virtual</h2>
+<h3 id="macos">MacOS</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</code></pre></div>
+<h3 id="windows">Windows</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
+</code></pre></div>
+<p><img alt="IMG-04" src="../../assets/gd_04.png" /></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<img alt="IMG-05" src="../../assets/gd_05.png" /></p>
+<h2 id="activar-el-ambiente-virtual">Activar el ambiente virtual</h2>
+<h3 id="macos_1">MacOS</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</code></pre></div>
+<h3 id="windows_1">Windows</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p><img alt="IMG-06" src="../../assets/gd_06.png" /></p>
+<h2 id="instalar-django">Instalar Django</h2>
+<h3 id="actualizar-pip">Actualizar pip</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</code></pre></div>
+<p><img alt="IMG-07" src="../../assets/gd_07.png" /></p>
+<h3 id="descargar-django">Descargar Django</h3>
+<p>Puedes consultar las versiones desde el siguiente <a href="https://docs.djangoproject.com/en/5.0/releases/">sitio web</a> </p>
+<p><img alt="IMG-01" src="../../assets/gd_01.png" /></p>
+<p>Recomendamos que siempre instales la versión más reciente disponible en el momento de creación de tu proyecto.</p>
+<p>Nosotros instalaremos la versión <code>5.0.6</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>django~<span class="o">=</span><span class="m">5</span>.0.6
+</code></pre></div>
+<p><img alt="IMG-08" src="../../assets/gd_08.png" /></p>
+<hr />
+<h1 id="nuestro-primer-proyecto-de-django">Nuestro primer proyecto de Django</h1>
+<p>En la sección anterior instalamos todo lo necesario para trabajar con el framework, a partir de este momento haremos uso de sus herramientas para crear nuestro primer proyecto.</p>
+<h2 id="inicializacion-de-proyecto">Inicialización de proyecto</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>django-admin<span class="w"> </span>startproject<span class="w"> </span>django_project<span class="w"> </span>.
+</code></pre></div>
+<p><img alt="IMG-09" src="../../assets/gd_09.png" /></p>
+<p>Después de la ejecución de este comando nuestra carpeta de proyecto <code>proyecto1Django</code> tendrá la siguiente estructura de directorios:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">proyecto1Django</span><span class="o">/</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="err">├──</span> <span class="n">django_project</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="err">│</span>   <span class="err">├──</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="err">│</span>   <span class="err">├──</span> <span class="n">asgi</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="err">│</span>   <span class="err">├──</span> <span class="n">settings</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="err">│</span>   <span class="err">├──</span> <span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="err">│</span>   <span class="err">└──</span> <span class="n">wsgi</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="err">├──</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="err">└──</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span>
+</code></pre></div>
+<details class="note">
+<summary>¿Qué son los ficheros dentro de <code>django_project/</code>?</summary>
+<ul>
+<li><code>__init__</code>.py indica que los archivos de la carpeta son parte de un paquete de Python. Sin este archivo, no podemos importar archivos desde otro directorio.</li>
+<li><code>asgi.py</code> permite ejecutar un <a href="https://en.wikipedia.org/wiki/Asynchronous_Server_Gateway_Interface">Asynchronous Server Gateway Interface</a> (opcional)</li>
+<li><code>settings.py</code> controla la configuración general de nuestro proyecto Django</li>
+<li><code>urls.py</code> le dice a Django qué páginas crear en respuesta a un navegador o solicitud de URL</li>
+<li><code>wsgi.py</code> significa <a href="https://es.wikipedia.org/wiki/WSGI">Web Server Gateway Interface</a> que ayuda a Django a servir a nuestras eventuales páginas web.</li>
+</ul>
+</details>
+<h2 id="ejecucion-de-servidor-de-desarrollo">Ejecución de servidor de desarrollo</h2>
+<p>Si la configuración ha funcionado bien hasta el momento, nuestro proyecto debería ser capaz de mostrar una página de prueba que Django instaló automáticamente, para verla bastará con ejecutar el <strong>servidor de desarrollo</strong> mediante el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</code></pre></div>
+<p><img alt="IMG-10" src="../../assets/gd_10.png" /></p>
+<h2 id="visitar-pagina-de-proyecto">Visitar página de proyecto</h2>
+<p>Ingresa a la siguiente URL: <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p>Deberás ver una pantalla como la siguiente:</p>
+<p><img alt="IMG-11" src="../../assets/gd_11.png" /></p>
+<p>Si pudiste ver esta pantalla quiere decir que la instalación se realizó correctamente y podrás continuar desarrollando tu aplicación.</p>
+<details class="note">
+<summary>Ciclo de Solicitud/Respuesta HTTP</summary>
+<p>El HTTP (Protocolo de transferencia de hipertexto) fue creado inicialmente por Tim Berners-Lee en 1989 y es la base de la World Wide Web. Un protocolo de red es un conjunto de reglas para formatear y procesar datos. Es como un lenguaje común para las computadoras que les permite comunicarse entre sí incluso si están ubicadas en lados opuestos de la tierra y tienen hardware y software muy diferentes.</p>
+<p>HTTP es un protocolo de solicitud-respuesta que funciona en un modelo informático cliente-servidor. Cada vez que visita una página web, el "cliente" (es decir, tu computadora) envía una "solicitud" inicial y un "servidor" envía una "respuesta". El cliente no tiene por qué ser un ordenador, también puede ser un teléfono móvil o cualquier dispositivo conectado a Internet. Pero el proceso es el mismo: un cliente envía una solicitud HTTP a una URL y un servidor devuelve una respuesta HTTP.</p>
+<p>En última instancia, todo lo que hace un framework web como Django es aceptar solicitudes HTTP a una URL determinada y devolver una respuesta HTTP que contiene la información necesaria para representar una página web. Eso es todo. Generalmente, este proceso implica identificar la URL adecuada, conectarse a una base de datos, agregar algo de lógica, aplicar estilo con HTML/CSS/JavaScript y luego devolver la respuesta HTTP. Eso es todo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Flujo</span> <span class="n">de</span> <span class="n">un</span> <span class="n">framework</span> <span class="n">web</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">Solicitud</span> <span class="n">HTTP</span>  <span class="o">-&gt;</span> <span class="n">URL</span> <span class="o">-&gt;</span> <span class="n">Combina</span> <span class="n">base</span> <span class="n">de</span> <span class="n">datos</span><span class="p">,</span> <span class="n">lógica</span><span class="p">,</span> <span class="n">estilos</span> <span class="o">-&gt;</span> <span class="n">Respuesta</span> <span class="n">HTTP</span> 
+</code></pre></div>
+</details>
+<details class="note">
+<summary>Modelo-Vista-Controlador vs Modelo-Vista-Template</summary>
+<p>Con el tiempo, el patrón Modelo-Vista-Controlador (MVC) ha surgido como una forma popular de separar internamente los datos, la lógica y la visualización de una aplicación en componentes separados. Esto facilita que un desarrollador razone sobre el código. El patrón MVC se usa ampliamente entre los frameworks web, incluidos <code>Ruby on Rails (Ruby)</code>, <code>Spring (Java)</code>, <code>Laravel (PHP)</code>, <code>ASP.NET (C#)</code> y muchos otros.</p>
+<p>En el patrón MVC tradicional hay tres componentes principales:</p>
+<ul>
+<li>Modelo: gestiona datos y lógica empresarial central.</li>
+<li>Vista: presenta datos del modelo en un formato particular.</li>
+<li>Controlador: acepta entradas del usuario y realiza lógica específica de la aplicación</li>
+</ul>
+<p>Django sólo sigue vagamente el enfoque MVC tradicional con su propia versión a menudo llamada <code>Modelo-Vista-Template</code> (MVT). Inicialmente, esto puede resultar confuso para los desarrolladores con experiencia previa en marcos web. En realidad, el enfoque de Django es en realidad un patrón de 4 partes que también incorpora la configuración de URL, por lo que algo como <code>MVTU</code> sería una descripción más precisa.</p>
+<p>El patrón Django MVT es el siguiente:</p>
+<ul>
+<li>Modelo: gestiona datos y lógica empresarial central.</li>
+<li>Vista: Describe qué datos se envían al usuario pero no su presentación.</li>
+<li>Template: presenta los datos como HTML con CSS y JavaScript. </li>
+<li>URL: Patrones que permiten acceder a una vista y su template asociado.</li>
+</ul>
+<p>Esta interacción es fundamental para Django pero muy confusa para los recién llegados, así que tracemos el orden de un ciclo de solicitud/respuesta HTTP determinado. </p>
+<p>Cuando escribe una URL, como https://djangoproject.com, lo primero que sucede dentro de nuestro proyecto Django es que se encuentra un patrón de URL (contenido en urls.py) que coincide. El patrón de URL está vinculado a una vista única (contenida en views.py) que combina los datos del modelo (almacenados en models.py) y el estilo de una plantilla (cualquier archivo que termine en .html). Luego, la vista devuelve una respuesta HTTP al usuario.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Ciclo</span> <span class="n">Solicitud</span><span class="o">/</span><span class="n">Respuesta</span> <span class="n">de</span> <span class="n">Django</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">Solicitud</span> <span class="n">HTTP</span> <span class="o">-&gt;</span> <span class="n">URL</span> <span class="o">-&gt;</span> <span class="n">Vista</span> <span class="o">-&gt;</span> <span class="n">Modelo</span> <span class="n">y</span> <span class="n">Template</span> <span class="o">-&gt;</span> <span class="n">Respuesta</span> <span class="n">HTTP</span>
+</code></pre></div>
+</details>
+<h2 id="creacion-de-una-aplicacion">Creación de una aplicación</h2>
+<p>Django utiliza el concepto de <code>proyectos</code> y <code>aplicaciones</code> para mantener el código limpio y legible. Un único proyecto Django puede contener varias aplicaciones. Cada aplicación controla una funcionalidad aislada. </p>
+<p>Por ejemplo, un sitio de comercio electrónico puede tener:</p>
+<ul>
+<li>aplicación para la autenticación de usuarios</li>
+<li>aplicación para pagos </li>
+<li>aplicación para mostrar detalles de la lista de artículos </li>
+</ul>
+<p>Son tres aplicaciones distintas que viven dentro de un proyecto. </p>
+<p>Cómo y cuándo dividir la funcionalidad en aplicaciones es algo subjetivo, pero en general, cada aplicación debe tener una función clara.</p>
+<p>Crearemos una aplicación llamada <code>portafolio</code> mediante el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>startapp<span class="w"> </span>portafolio
+</code></pre></div>
+<p><img alt="IMG-12" src="../../assets/gd_12.png" /></p>
+<p>Notarás que se habrá creado un directorio homónimo a tu app con la siguiente estructura:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="err">├──</span> <span class="n">portafolio</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="err">│</span>   <span class="err">├──</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="err">│</span>   <span class="err">├──</span> <span class="n">admin</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="err">│</span>   <span class="err">├──</span> <span class="n">apps</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="err">│</span>   <span class="err">├──</span> <span class="n">migrations</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="err">│</span>   <span class="err">├──</span> <span class="n">models</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="err">│</span>   <span class="err">├──</span> <span class="n">tests</span><span class="o">.</span><span class="n">py</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="err">│</span>   <span class="err">└──</span> <span class="n">views</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
+<details class="note">
+<summary>¿Qué hacen los ficheros de mi nueva app?</summary>
+<ul>
+<li><code>admin.py</code> es un archivo de configuración para la aplicación integrada Django Admin</li>
+<li><code>apps.py</code> es un archivo de configuración para la propia aplicación</li>
+<li><code>migraciones/</code> realiza un seguimiento de cualquier cambio en nuestro archivo models.py para que permanezca sincronizado con nuestra base de datos</li>
+<li><code>models.py</code> es donde definimos nuestros modelos de base de datos que Django traduce automáticamente en tablas de bases de datos</li>
+<li><code>tests.py</code> es para pruebas específicas de aplicaciones</li>
+<li><code>views.py</code> es donde manejamos la lógica de solicitud/respuesta para nuestra aplicación web</li>
+</ul>
+</details>
+<h2 id="anadir-aplicacion-al-proyecto">Añadir aplicación al proyecto</h2>
+<p>Aunque nuestra nueva aplicación existe dentro del proyecto, Django no la "sabe" hasta que la agregamos explícitamente al fichero <code>django_project/settings.py</code>. </p>
+<p>En tu editor de texto, abre el archivo y desplázate hacia abajo hasta que veas <code>INSTALLED_APPS</code>, donde habrá <strong>seis</strong> aplicaciones Django integradas. </p>
+<p><img alt="IMG-13" src="../../assets/gd_13.png" /></p>
+<p>Agrega <code>"portafolio.apps.PortafolioConfig"</code> en la parte inferior.</p>
+<p><img alt="IMG-17" src="../../assets/gd_17.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Añadir más apps</p>
+<p>Conforme tu aplicación crezca crearás y añadiras nuevas aplicaciones, el proceso es el mismo solo cambiará el nombre del texto, si la app fuera <code>cotizacion</code>, deberías añadir <code>cotizacion.apps.CotizacionConfig</code>.</p>
+</div>
+<details class="note">
+<summary>¿Qué es portafolio.apps.PortafolioConfig?</summary>
+<p>Si abres el fichero <code>portafolio/apps.py</code></p>
+<p><img alt="IMG-15" src="../../assets/gd_15.png" /></p>
+<p>Verás una función llamada <code>PortafolioConfig</code>, esta función permite a Django identificar tu app. </p>
+<p><img alt="IMG-16" src="../../assets/gd_16.png" /></p>
+</details>
+<h2 id="generar-nuestra-primera-vista">Generar nuestra primera vista</h2>
+<p>Dirigete al fichero <code>portafolio/views.py</code></p>
+<p>Deberás ver un archivo casi vacío, salvo por el import.</p>
+<p><img alt="IMG-18" src="../../assets/gd_18.png" /></p>
+<p>Sustituye el contendio por este código:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="k">def</span> <span class="nf">homePageView</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Quedando el fichero de la siguiente manera:</p>
+<p><img alt="IMG-19" src="../../assets/gd_19.png" /></p>
+<p>Básicamente, lo que hicimos fue hacer que cada que se llame a la función de vista <code>homePageView</code>, se devuelve el texto "Hello, World!".</p>
+<p>Más específicamente, hemos importado el método integrado <a href="https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpResponse">HttpResponse</a>  para poder devolver un objeto de respuesta al usuario. </p>
+<p>Hemos creado una función llamada <code>homePageView</code> que acepta el objeto de <code>request</code> (solicitud) y devuelve una <code>HttpResponse</code> (respuesta) con la cadena "Hello, World!".</p>
+<h2 id="generar-nuestra-primera-url">Generar nuestra primera URL</h2>
+<ol>
+<li>Crea el fichero <code>portafolio/urls.py</code></li>
+<li>Dirigete al fichero <code>portafolio/urls.py</code></li>
+<li>Pega el siguiente código:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">homePageView</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">homePageView</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">),</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">]</span>
+</code></pre></div>
+Tu archivo se verá de la siguiente manera:</p>
+<p><img alt="IMG-20" src="../../assets/gd_20.png" /></p>
+<p>En la línea superior importamos <code>path</code> desde Django para dar funcionalidad a nuestro patrón de URL y en la siguiente línea importamos nuestras vistas. </p>
+<p>Al referirnos al archivo <code>views.py</code> como <code>.views</code>, le estamos diciendo a Django que busque en el directorio actual un archivo <code>views.py</code> e importe la vista <code>homePageView</code> desde allí.</p>
+<p>Nuestro patrón de URL tiene tres partes:</p>
+<ul>
+<li>una expresión regular de Python para la cadena vacía <code>" "</code> </li>
+<li>una referencia a la vista llamada <code>homePageView</code></li>
+<li>un <a href="https://docs.djangoproject.com/en/4.0/topics/http/urls/#naming-url-patterns">patrón opcional de URL con nombre</a> denominado "<code>home</code>".</li>
+</ul>
+<p>En otras palabras, si el usuario solicita la página de inicio representada por la cadena vacía "", Django debería usar la vista llamada homePageView.</p>
+<h2 id="anadir-las-urls-de-nuestra-app-al-proyecto">Añadir las urls de nuestra app al proyecto</h2>
+<p>De manera análoga a cuando añadimos la aplicación al proyecto, debemos añadir las URLs de esta app a la configuración del proyecto. </p>
+<p>Para ello dirígete al fichero <code>django_project/urls.py</code></p>
+<p><img alt="IMG-21" src="../../assets/gd_21.png" /></p>
+<p>Se verá de la siguiente manera:</p>
+<p><img alt="IMG-22" src="../../assets/gd_22.png" /></p>
+<p>En la línea donde importa <code>path</code> escribe una coma y luego <code>include</code>.</p>
+<p>Dentro del arreglo <code>urlpatterns</code> añade el siguiente patrón:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;portafolio.urls&quot;</span><span class="p">)),</span>
+</code></pre></div>
+<p>Quedando el archivo de la siguiente manera:</p>
+<p><img alt="IMG-23" src="../../assets/gd_23.png" /></p>
+<p>Si ejecutas el servidor de desarrollo con:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</code></pre></div>
+<p>Y visitas la URL: <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> verás tu aplicación en acción. </p>
+<p><img alt="IMG-24" src="../../assets/gd_24.png" /></p>
+<h1 id="guardemos-nuestro-proyecto-en-un-repositorio-remoto">Guardemos nuestro proyecto en un repositorio remoto</h1>
+<p>Primero al nivel de nuestra carpeta <code>proyecto1Django</code> crea un nuevo fichero llamado <code>.gitignore</code>.</p>
+<p><img alt="IMG-25" src="../../assets/gd_25.png" /></p>
+<p>Dentro de dicho fichero añade la siguientes líneas:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>.venv/
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>db.sqlite3
+</code></pre></div>
+<p>Ahora ejecutemos los siguientes comandos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>git<span class="w"> </span>init
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git<span class="w"> </span>status
+</code></pre></div>
+<p><img alt="IMG-26" src="../../assets/gd_26.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>git<span class="w"> </span>add<span class="w"> </span>-A
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>git<span class="w"> </span>status
+</code></pre></div>
+<p><img alt="IMG-28" src="../../assets/gd_28.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Primer Commit&quot;</span>
+</code></pre></div>
+<p><img alt="IMG-29" src="../../assets/gd_29.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>git<span class="w"> </span>status
+</code></pre></div>
+<p><img alt="IMG-30" src="../../assets/gd_30.png" /></p>
+<p>Crea un repositorio en github</p>
+<p><img alt="IMG-31" src="../../assets/gd_31.png" /></p>
+<p>Usa los comandos que te sugiere inmediatamente después de crear el repositorio:</p>
+<p><img alt="IMG-32" src="../../assets/gd_32.png" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/lpumogo2024/proyectoDjango1.git
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+<p><img alt="IMG-33" src="../../assets/gd_33.png" /></p>
+<p>Si recargas la página de github donde creaste el repositorio deberías ver tus archivos:</p>
+<p><img alt="IMG-34" src="../../assets/gd_34.png" /></p>
+<p>Si quisieras trabajar el proyecto en otro equipo deberías instalar todos los módulos usados en tu ambiente virtual mediante comandos de <code>pip install</code> si el proyecto es pequeño y se usan pocas librerías es posible, sin embargo, en un proyecto con muchas dependencias puede llevar a errores, por lo que se recomienda anotar todas las dependencias en un fichero llamado <code>requirements.txt</code>.</p>
+<p>Muestra todas las dependencias con el comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>pip<span class="w"> </span>freeze
+</code></pre></div>
+<p><img alt="IMG-35" src="../../assets/gd_35.png" /></p>
+<p>Podemos copiarlas y pegarlas en un fichero manualmente o emplear la redirección del <code>STDOUT</code> con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+</code></pre></div>
+<p>Se creará el fichero en automático con el contenido que muestra el comando <code>pip freeze</code>.</p>
+<p>Ahora podemos seguir el flujo de guardar cambios incrementales en github con los siguientes comandos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>git<span class="w"> </span>status
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>git<span class="w"> </span>add<span class="w"> </span>-A
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Archivo requirements.txt&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>git<span class="w"> </span>push
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>git<span class="w"> </span>status
+</code></pre></div>
+<p><img alt="IMG-36" src="../../assets/gd_36.png" /></p>
+<p><img alt="IMG-37" src="../../assets/gd_37.png" /></p>
+<h1 id="configuremos-nuestros-templates">Configuremos nuestros templates</h1>
+<p>Cada framework web necesita una forma conveniente de generar archivos HTML y en Django el enfoque es utilizar "templates", es decir, archivos HTML individuales que se pueden vincular entre sí y que también incluyen lógica básica.</p>
+<p>Nuestra primer vista muestra el mensaje: "Hello, World!". ¡Eso técnicamente funciona pero no escala bien! Un mejor enfoque es vincular una vista a un template, separando así la información contenida en cada una.</p>
+<p>La primera consideración es dónde colocar los templates dentro de la estructura de un proyecto Django. </p>
+<h2 id="estructura-por-defecto">Estructura por defecto</h2>
+<p>Hay dos opciones. De forma predeterminada, el cargador de templates de Django buscará templates relacionadas dentro de cada aplicación. Sin embargo, la estructura es algo confusa: cada aplicación necesita un nuevo directorio de templates, otro directorio con el mismo nombre que la aplicación y luego el archivo de template.
+Por lo tanto, en nuestra aplicación de portafolio, Django esperaría el siguiente diseño:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="err">└──</span> <span class="n">portafolio</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>    <span class="err">├──</span> <span class="n">templates</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>        <span class="err">├──</span> <span class="n">portafolio</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>            <span class="err">├──</span> <span class="n">home</span><span class="o">.</span><span class="n">html</span>
+</code></pre></div>
+<p>Esto significa que necesitaríamos crear un nuevo directorio de templates, un nuevo directorio con el nombre de la aplicación, y finalmente, nuestra plantilla, que es <code>home.html</code>.</p>
+<p>¿Por qué este enfoque aparentemente repetitivo? ¡La respuesta corta es que el cargador de templates de Django quiere estar realmente seguro de encontrar la plantilla correcta! ¿Qué sucede si hay archivos home.html en dos aplicaciones independientes? Esta estructura garantiza que no existan tales conflictos.</p>
+<p>Sin embargo, existe otro enfoque que consiste en crear un único directorio de plantillas a nivel de proyecto y colocar todas las plantillas allí. </p>
+<p>Al hacer un pequeño ajuste en nuestro archivo <code>django-project/settings.py</code>, podemos decirle a Django que también busque plantillas en este directorio. Ese es el enfoque que utilizaremos.</p>
+<h2 id="estructura-recomendada">Estructura recomendada</h2>
+<p>Primero crea un folder llamado <code>templates</code> dentro de <code>proyecto1Django</code> (ruta a la que nos referiremos como la ´raíz´ del proyecto), puedes usar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>mkdir<span class="w"> </span>templates
+</code></pre></div>
+<p><img alt="IMG-38" src="../../assets/gd_38.png" /></p>
+<p>Tu explorador de archivos del editor de código debería tener los siguientes directorios y ficheros:</p>
+<p><img alt="IMG-39" src="../../assets/gd_39.png" /></p>
+<p>A continuación necesitamos actualizar nuestra configuración del proyecto para indicarle a Django la ubicación de nuestro nuevo directorio de <code>templates</code>. </p>
+<p>Dirigite al fichero <code>django_project/settings.py</code></p>
+<p>Ahí busca la configuración <code>TEMPLATES</code> que se debería ver de la siguiente manera:</p>
+<p><img alt="IMG-40" src="../../assets/gd_40.png" /></p>
+<p>Deberás modificar la línea del diccionario <code>DIRS</code> para que tenga el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="s2">&quot;DIRS&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;templates&quot;</span><span class="p">],</span>
+</code></pre></div>
+<p><strong>Antes</strong>
+<img alt="IMG-40" src="../../assets/gd_40.png" /></p>
+<p><strong>Después</strong>
+<img alt="IMG-41" src="../../assets/gd_41.png" /></p>
+<h1 id="configuremos-nuestros-archivos-estaticos">Configuremos nuestros archivos estáticos</h1>
+<p>El directorio <code>templates</code> contendrá todos nuestros ficheros <code>.html</code>, sin embargo, necesitamos agregar algo de <code>CSS</code> a nuestro proyecto para mejorar el estilo.</p>
+<p><code>CSS</code>, <code>JavaScript</code> y las imágenes son una pieza central de cualquier aplicación web moderna y, dentro del mundo Django, se denominan "archivos estáticos". </p>
+<p>Django proporciona una tremenda flexibilidad en cuanto a cómo se utilizan estos archivos, pero esto puede generar mucha confusión al principio.</p>
+<p>De forma predeterminada, Django buscará dentro de cada aplicación una carpeta llamada <code>static</code>. </p>
+<p>En otras palabras, una carpeta llamada <code>portafolio/static/</code>. Muy similar a cómo se tratan las templates.</p>
+<p>A medida que los proyectos de Django crecen en complejidad con el tiempo y tienen múltiples aplicaciones, a menudo es más sencillo razonar sobre archivos estáticos si se almacenan en un único directorio a nivel de proyecto. Ése es el enfoque que adoptaremos aquí.</p>
+<h2 id="estructura-recomendada_1">Estructura recomendada</h2>
+<p>Primero crea un folder llamado <code>static</code> dentro de <code>proyecto1Django</code>, puedes usar el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>mkdir<span class="w"> </span>static
+</code></pre></div>
+<p><img alt="IMG-42" src="../../assets/gd_42.png" /></p>
+<p>Tu explorador de archivos del editor de código debería tener los siguientes directorios y ficheros:</p>
+<p><img alt="IMG-43" src="../../assets/gd_43.png" /></p>
+<p>A continuación necesitamos actualizar nuestra configuración del proyecto para indicarle a Django la ubicación de nuestro nuevo directorio de <code>static</code>. </p>
+<p>Dirigite al fichero <code>django_project/settings.py</code></p>
+<p>Ahí busca la configuración <code>STATIC_URL</code> que se debería ver de la siguiente manera:</p>
+<p><img alt="IMG-44" src="../../assets/gd_44.png" /></p>
+<p>Deberás modificarla para que tenga el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s2">&quot;/static/&quot;</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>Antes</strong>
+<img alt="IMG-45" src="../../assets/gd_44.png" /></p>
+<p><strong>Después</strong>
+<img alt="IMG-45" src="../../assets/gd_45.png" /></p>
+<h1 id="probemos-nuestra-configuracion-de-templates-static">Probemos nuestra configuración de templates-static</h1>
+<p>Para validar que nuestras configuraciones sean correctas crearemos dos ficheros, el primero será nuestra primer template a la que llamaremos <code>home.html</code> y se localizará dentro de nuestro directorio <code>templates</code>. </p>
+<p>El segundo será un fichero de estilos css llamado <code>styles.css</code> y se localizará dentro del directrio <code>static</code></p>
+<p><img alt="IMG-46" src="../../assets/gd_46.png" /></p>
+<p>Añade el siguiente contenido a <code>templates/home.html</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>{% load static %}
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% static &#39;styles.css&#39; %}&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Prueba<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;main-test&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>        Hello, World!
+<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Añade el siguiente contenido a <code>static/styles.css</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="p">.</span><span class="nc">main-test</span><span class="p">{</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>Para que nuestra vista deje de retornar el mensaje que definimos inicialente y en su lugar retorne la plantilla que acabamos de crear modificaremos el fichero <code>portafolio/views.py</code> poniendo el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="k">class</span> <span class="nc">HomePageView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span> 
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;home.html&quot;</span>
+</code></pre></div>
+<p><strong>Antes</strong></p>
+<p><img alt="IMG-19" src="../../assets/gd_19.png" /></p>
+<p><strong>Después</strong>
+<img alt="IMG-48" src="../../assets/gd_48.png" /></p>
+<p>Finalmente modificaremos el fichero <code>portafolio/urls.py</code> poniendo el siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span> 
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="n">HomePageView</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">HomePageView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">),</span>
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="p">]</span>
+</code></pre></div>
+<p><strong>Antes</strong></p>
+<p><img alt="IMG-20" src="../../assets/gd_20.png" /></p>
+<p><strong>Después</strong>
+<img alt="IMG-49" src="../../assets/gd_49.png" /></p>
+<p>Ejecute el servidor de desarrollo mediante el comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</code></pre></div>
+<p>E ingrese a <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p>Debería ser capaz de ver el siguiente contenido:</p>
+<p><img alt="IMG-50" src="../../assets/gd_50.png" /></p>
+<hr />
+<h1 id="crud">CRUD</h1>
+<p>En informática, <code>CRUD</code> es el acrónimo de "Crear, Leer, Actualizar y Borrar" (del original en inglés: Create, Read, Update and Delete), que se usa para referirse a las funciones básicas en bases de datos o la capa de persistencia en un software.</p>
+<p>En esta sección usaremos el proyecto que recién configuramos para generar un menú digital de restaurante partiendo del siguiente diagrama entidad-relación:</p>
+<pre class="mermaid"><code>erDiagram
+    CATEGORIA {
+        int ID
+        string Nombre
+        string Descripcion
+    }
+
+    PRODUCTO {
+        int ID
+        string Nombre
+        string Descripcion
+        float Precio
+        boolean Disponibilidad
+        int CategoriaID
+    }
+
+    CATEGORIA ||--|{ PRODUCTO : contiene</code></pre>
+<h2 id="modelos">Modelos</h2>
+<p>En Django, los modelos se utilizan para definir la estructura de la base de datos. Cada modelo representa una tabla en la base de datos y cada atributo del modelo representa una columna en dicha tabla. A continuación, explicaremos cómo definir un modelo llamado <code>Categoria</code>.</p>
+<h3 id="declaracion-del-modelo-categoria">Declaración del Modelo Categoría</h3>
+<p>Para definir un modelo en Django, debes crear una clase que herede de <code>models.Model</code>. Aquí tienes un ejemplo de cómo declarar un modelo <code>Categoria</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">class</span> <span class="nc">Categoria</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</code></pre></div>
+<h3 id="definicion-de-campos">Definición de Campos</h3>
+<p>Cada modelo debe tener campos definidos, que corresponden a los atributos de nuestro diagrama entidad-relación. En el modelo <code>Categoria</code>, definiremos dos campos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>    <span class="n">descripcion</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+</code></pre></div>
+<ul>
+<li>
+<p><code>nombre</code>: Este es un <code>CharField</code>, que se utiliza para almacenar texto corto. El argumento <code>max_length=50</code> establece la longitud máxima permitida para este campo en 50 caracteres.</p>
+</li>
+<li>
+<p><code>descripcion</code>: Este es un <code>TextField</code>, que se utiliza para almacenar texto más largo sin una longitud máxima específica.</p>
+</li>
+</ul>
+<h3 id="metodo-__str__">Método <code>__str__</code></h3>
+<p>Es una buena práctica definir el método <code>__str__</code> en tus modelos. Este método determina cómo se representará el objeto del modelo como una cadena. Esto es especialmente útil para la representación de los objetos en el panel de administración de Django y en otros contextos donde los objetos se convierten en cadenas.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
+</code></pre></div>
+<p>En este caso, el método <code>__str__</code> devuelve el valor del campo <code>nombre</code>. Esto significa que cuando se imprima o se muestre un objeto <code>Categoria</code>, se verá como el valor de su campo <code>nombre</code>.</p>
+<h3 id="declaracion-completa-del-modelo">Declaración Completa del Modelo</h3>
+<p>Aquí está la declaración completa del modelo <code>Categoria</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="k">class</span> <span class="nc">Categoria</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>    <span class="n">descripcion</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>
+<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
+</code></pre></div>
+<p>¡Por supuesto! Vamos a introducir el siguiente modelo, <code>Producto</code>, y explicaremos los detalles relevantes de su declaración.</p>
+<h3 id="declaracion-del-modelo-producto">Declaración del Modelo Producto</h3>
+<p>Aquí está la declaración del modelo <code>Producto</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="k">class</span> <span class="nc">Producto</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>    <span class="n">descripcion</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>    <span class="n">precio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span><span class="n">max_digits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>    <span class="n">disponibilidad</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>    <span class="n">categoria</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Categoria</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>
+<a id="__codelineno-51-8" name="__codelineno-51-8" href="#__codelineno-51-8"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-51-9" name="__codelineno-51-9" href="#__codelineno-51-9"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
+</code></pre></div>
+<h3 id="detalles-relevantes">Detalles Relevantes</h3>
+<ul>
+<li>
+<p><code>nombre</code>: Este es un <code>CharField</code> con una longitud máxima de 50 caracteres, utilizado para almacenar el nombre del producto.</p>
+</li>
+<li>
+<p><code>descripcion</code>: Este es un <code>TextField</code>, utilizado para almacenar una descripción detallada del producto.</p>
+</li>
+<li>
+<p><code>precio</code>: Este es un <code>DecimalField</code>, que se utiliza para almacenar valores decimales. El argumento <code>max_digits=5</code> especifica el número total de dígitos permitidos en el número, mientras que <code>decimal_places=2</code> especifica cuántos de esos dígitos se encuentran después del punto decimal. Esto es útil para almacenar precios.</p>
+</li>
+<li>
+<p><code>disponibilidad</code>: Este es un <code>BooleanField</code>, que se utiliza para almacenar valores de verdadero o falso. El argumento <code>default=True</code> establece que el valor predeterminado es <code>True</code>, lo que indica que el producto está disponible por defecto.</p>
+</li>
+<li>
+<p><code>categoria</code>: Este es un <code>ForeignKey</code> que crea una relación muchos a uno con el modelo <code>Categoria</code>. El argumento <code>on_delete=models.CASCADE</code> especifica que si la categoría asociada se elimina, todos los productos asociados con esa categoría también se eliminarán. Esta relación permite que cada producto esté asociado con una categoría específica.</p>
+</li>
+</ul>
+<h2 id="implementacion-en-proyecto">Implementación en proyecto</h2>
+<p>Para implementar los modelos en el proyecto deberás dirigirte al fichero <code>portafolio/models.py</code> y dejar su contenido de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="k">class</span> <span class="nc">Categoria</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>    <span class="n">descripcion</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+<a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a>
+<a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-52-9" name="__codelineno-52-9" href="#__codelineno-52-9"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
+<a id="__codelineno-52-10" name="__codelineno-52-10" href="#__codelineno-52-10"></a>
+<a id="__codelineno-52-11" name="__codelineno-52-11" href="#__codelineno-52-11"></a>
+<a id="__codelineno-52-12" name="__codelineno-52-12" href="#__codelineno-52-12"></a><span class="k">class</span> <span class="nc">Producto</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-52-13" name="__codelineno-52-13" href="#__codelineno-52-13"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-52-14" name="__codelineno-52-14" href="#__codelineno-52-14"></a>    <span class="n">descripcion</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+<a id="__codelineno-52-15" name="__codelineno-52-15" href="#__codelineno-52-15"></a>    <span class="n">precio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span><span class="n">max_digits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-52-16" name="__codelineno-52-16" href="#__codelineno-52-16"></a>    <span class="n">disponibilidad</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-52-17" name="__codelineno-52-17" href="#__codelineno-52-17"></a>    <span class="n">categoria</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Categoria</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<a id="__codelineno-52-18" name="__codelineno-52-18" href="#__codelineno-52-18"></a>
+<a id="__codelineno-52-19" name="__codelineno-52-19" href="#__codelineno-52-19"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-52-20" name="__codelineno-52-20" href="#__codelineno-52-20"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span>
+</code></pre></div>
+<h3 id="creacion-y-aplicacion-de-migraciones">Creación y Aplicación de Migraciones</h3>
+<p>Después de definir tus modelos en Django, debes crear y aplicar las migraciones para actualizar tu base de datos con las nuevas estructuras de las tablas. Aquí están los pasos a seguir:</p>
+<h3 id="paso-1-crear-migraciones">Paso 1: Crear Migraciones</h3>
+<p>El primer comando que debes ejecutar es <code>makemigrations</code>. Este comando analiza tus modelos y crea los archivos de migración necesarios para reflejar los cambios en la base de datos.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+</code></pre></div>
+<p>Al ejecutar este comando, Django generará un archivo de migración en el directorio <code>migrations</code> de tu aplicación. Este archivo contiene las instrucciones para crear las nuevas tablas y campos en la base de datos.</p>
+<p><img alt="IMG-51" src="../../assets/gd_51.png" /></p>
+<h3 id="paso-2-aplicar-migraciones">Paso 2: Aplicar Migraciones</h3>
+<p>Una vez que las migraciones han sido creadas, necesitas aplicarlas a la base de datos usando el comando <code>migrate</code>. Este comando ejecuta las instrucciones contenidas en los archivos de migración para actualizar la estructura de la base de datos.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</code></pre></div>
+<p>Al ejecutar este comando, Django aplicará todas las migraciones pendientes y actualizará tu base de datos con las nuevas tablas y campos definidos en tus modelos.</p>
+<p><img alt="IMG-52" src="../../assets/gd_52.png" /></p>
+<h3 id="resumen">Resumen</h3>
+<ol>
+<li>
+<p><strong>Crear Migraciones</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>makemigrations
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Aplicar Migraciones</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</code></pre></div></p>
+</li>
+</ol>
+<p>Estos comandos son esenciales para que los cambios en tus modelos se reflejen en la base de datos. Asegúrate de ejecutarlos en este orden cada vez que hagas cambios en tus modelos.</p>
+<h2 id="vistas">Vistas</h2>
+<p>En Django existen diferentes tipos de vistas, originalmente solo existían las vistas basadas en funciones, sin embargo, los desarrolladores pronto notaron que las acciones de un <code>CRUD</code> son en escencia identicas siempre (lista todos los registros de una tabla, crea un nuevo registro de cierta tabla, elimina un registro, etc.) para ello desarrollaron <code>Vistas basadas en Clases (Class-Based Views)</code> que nos permiten heredar los casos de uso comúnes para no perder tiempo volviendo a escribir funciones usuales una y otra vez. </p>
+<p>Para desarrollar nuestro CRUD haremos uso de varias <code>Class-Based Views</code> y veremos lo fácil que es implementarlas en Django.</p>
+<p>Para comenzar a generar el código de nuestras vistas edita el fichero <code>portafolio/views.py</code>, en él será necesario que en la parte superior escribas el siguiente código que nos permite importar modelos y las clases de las que heredaremos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Categoria</span><span class="p">,</span> <span class="n">Producto</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>    <span class="n">CreateView</span><span class="p">,</span>
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>    <span class="n">ListView</span><span class="p">,</span>
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>    <span class="n">UpdateView</span><span class="p">,</span>
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>    <span class="n">DeleteView</span><span class="p">,</span>
+<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="vista-de-creacion">Vista de Creación</h3>
+<p>Comencemos con la vista que nos permite crear registros de <code>Categoria</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="k">class</span> <span class="nc">CategoriaCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_create.html&quot;</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a>    <span class="p">]</span>
+<a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</code></pre></div>
+<p>Debemos crear el fichero <code>templates/categoria_create.html</code> vinculado a esta vista.</p>
+<p>La vista que nos permite crear registros de <code>Producto</code> es análoga:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="k">class</span> <span class="nc">ProductoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_create.html&quot;</span>
+<a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-59-7" name="__codelineno-59-7" href="#__codelineno-59-7"></a>        <span class="s2">&quot;precio&quot;</span><span class="p">,</span>
+<a id="__codelineno-59-8" name="__codelineno-59-8" href="#__codelineno-59-8"></a>        <span class="s2">&quot;disponibilidad&quot;</span><span class="p">,</span>
+<a id="__codelineno-59-9" name="__codelineno-59-9" href="#__codelineno-59-9"></a>        <span class="s2">&quot;categoria&quot;</span><span class="p">,</span>
+<a id="__codelineno-59-10" name="__codelineno-59-10" href="#__codelineno-59-10"></a>    <span class="p">]</span>
+<a id="__codelineno-59-11" name="__codelineno-59-11" href="#__codelineno-59-11"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</code></pre></div>
+<p>Debemos crear el fichero <code>templates/producto_create.html</code> vinculado a esta vista.</p>
+<h3 id="vista-de-lectura">Vista de Lectura</h3>
+<p>Para listar todos los registros de <code>Categoria</code> usaremos esta vista:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="k">class</span> <span class="nc">CategoriaListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_list.html&quot;</span>
+<a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a>    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;categorias&quot;</span>
+</code></pre></div>
+<p>Debemos crear el fichero <code>templates/categoria_list.html</code> vinculado a esta vista.</p>
+<p>Para listar todos los registros de <code>Producto</code> usaremos:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="k">class</span> <span class="nc">ProductoListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_list.html&quot;</span>
+<a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;productos&quot;</span>
+</code></pre></div>
+Debemos crear el fichero <code>templates/producto_list.html</code> vinculado a esta vista.</p>
+<h3 id="vista-de-actualizacion">Vista de Actualización</h3>
+<p>Para actualizar algún registro de <code>Categoria</code> usaremos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="k">class</span> <span class="nc">CategoriaUpdateView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_update.html&quot;</span>
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a>    <span class="p">]</span>
+<a id="__codelineno-62-8" name="__codelineno-62-8" href="#__codelineno-62-8"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</code></pre></div>
+<p>Debemos crear el fichero <code>templates/categoria_update.html</code> vinculado a esta vista.</p>
+<p>Para actualizar algún registro de <code>Producto</code> usaremos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="k">class</span> <span class="nc">ProductoUpdateView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_update.html&quot;</span>
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-63-7" name="__codelineno-63-7" href="#__codelineno-63-7"></a>        <span class="s2">&quot;precio&quot;</span><span class="p">,</span>
+<a id="__codelineno-63-8" name="__codelineno-63-8" href="#__codelineno-63-8"></a>        <span class="s2">&quot;disponibilidad&quot;</span><span class="p">,</span>
+<a id="__codelineno-63-9" name="__codelineno-63-9" href="#__codelineno-63-9"></a>        <span class="s2">&quot;categoria&quot;</span><span class="p">,</span>
+<a id="__codelineno-63-10" name="__codelineno-63-10" href="#__codelineno-63-10"></a>    <span class="p">]</span>
+<a id="__codelineno-63-11" name="__codelineno-63-11" href="#__codelineno-63-11"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</code></pre></div>
+<p>Debemos crear el fichero <code>templates/producto_update.html</code> vinculado a esta vista.</p>
+<h3 id="vista-de-borrado">Vista de Borrado</h3>
+<p>Para borrar algún registro de <code>Categoria</code> usaremos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="k">class</span> <span class="nc">CategoriaDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_delete.html&quot;</span>
+<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</code></pre></div>
+<p>Debemos crear el fichero <code>templates/categoria_delete.html</code> vinculado a esta vista.</p>
+<p>Para borrar algún registro de <code>Producto</code> usaremos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="k">class</span> <span class="nc">ProductoDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_delete.html&quot;</span>
+<a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</code></pre></div>
+<p>Debemos crear el fichero <code>templates/producto_delete.html</code> vinculado a esta vista.</p>
+<h3 id="contenido-del-fichero-viewspy">Contenido del fichero views.py</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Categoria</span><span class="p">,</span> <span class="n">Producto</span>
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>
+<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-66-6" name="__codelineno-66-6" href="#__codelineno-66-6"></a>    <span class="n">CreateView</span><span class="p">,</span>
+<a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a>    <span class="n">ListView</span><span class="p">,</span>
+<a id="__codelineno-66-8" name="__codelineno-66-8" href="#__codelineno-66-8"></a>    <span class="n">UpdateView</span><span class="p">,</span>
+<a id="__codelineno-66-9" name="__codelineno-66-9" href="#__codelineno-66-9"></a>    <span class="n">DeleteView</span><span class="p">,</span>
+<a id="__codelineno-66-10" name="__codelineno-66-10" href="#__codelineno-66-10"></a><span class="p">)</span>
+<a id="__codelineno-66-11" name="__codelineno-66-11" href="#__codelineno-66-11"></a>
+<a id="__codelineno-66-12" name="__codelineno-66-12" href="#__codelineno-66-12"></a>
+<a id="__codelineno-66-13" name="__codelineno-66-13" href="#__codelineno-66-13"></a><span class="k">class</span> <span class="nc">HomePageView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+<a id="__codelineno-66-14" name="__codelineno-66-14" href="#__codelineno-66-14"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;home.html&quot;</span>
+<a id="__codelineno-66-15" name="__codelineno-66-15" href="#__codelineno-66-15"></a>
+<a id="__codelineno-66-16" name="__codelineno-66-16" href="#__codelineno-66-16"></a>
+<a id="__codelineno-66-17" name="__codelineno-66-17" href="#__codelineno-66-17"></a><span class="k">class</span> <span class="nc">CategoriaCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+<a id="__codelineno-66-18" name="__codelineno-66-18" href="#__codelineno-66-18"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-66-19" name="__codelineno-66-19" href="#__codelineno-66-19"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_create.html&quot;</span>
+<a id="__codelineno-66-20" name="__codelineno-66-20" href="#__codelineno-66-20"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-66-21" name="__codelineno-66-21" href="#__codelineno-66-21"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-22" name="__codelineno-66-22" href="#__codelineno-66-22"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-23" name="__codelineno-66-23" href="#__codelineno-66-23"></a>    <span class="p">]</span>
+<a id="__codelineno-66-24" name="__codelineno-66-24" href="#__codelineno-66-24"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<a id="__codelineno-66-25" name="__codelineno-66-25" href="#__codelineno-66-25"></a>
+<a id="__codelineno-66-26" name="__codelineno-66-26" href="#__codelineno-66-26"></a>
+<a id="__codelineno-66-27" name="__codelineno-66-27" href="#__codelineno-66-27"></a><span class="k">class</span> <span class="nc">CategoriaListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<a id="__codelineno-66-28" name="__codelineno-66-28" href="#__codelineno-66-28"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-66-29" name="__codelineno-66-29" href="#__codelineno-66-29"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_list.html&quot;</span>
+<a id="__codelineno-66-30" name="__codelineno-66-30" href="#__codelineno-66-30"></a>    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;categorias&quot;</span>
+<a id="__codelineno-66-31" name="__codelineno-66-31" href="#__codelineno-66-31"></a>
+<a id="__codelineno-66-32" name="__codelineno-66-32" href="#__codelineno-66-32"></a>
+<a id="__codelineno-66-33" name="__codelineno-66-33" href="#__codelineno-66-33"></a><span class="k">class</span> <span class="nc">CategoriaUpdateView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+<a id="__codelineno-66-34" name="__codelineno-66-34" href="#__codelineno-66-34"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-66-35" name="__codelineno-66-35" href="#__codelineno-66-35"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_update.html&quot;</span>
+<a id="__codelineno-66-36" name="__codelineno-66-36" href="#__codelineno-66-36"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-66-37" name="__codelineno-66-37" href="#__codelineno-66-37"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-38" name="__codelineno-66-38" href="#__codelineno-66-38"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-39" name="__codelineno-66-39" href="#__codelineno-66-39"></a>    <span class="p">]</span>
+<a id="__codelineno-66-40" name="__codelineno-66-40" href="#__codelineno-66-40"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<a id="__codelineno-66-41" name="__codelineno-66-41" href="#__codelineno-66-41"></a>
+<a id="__codelineno-66-42" name="__codelineno-66-42" href="#__codelineno-66-42"></a>
+<a id="__codelineno-66-43" name="__codelineno-66-43" href="#__codelineno-66-43"></a><span class="k">class</span> <span class="nc">CategoriaDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+<a id="__codelineno-66-44" name="__codelineno-66-44" href="#__codelineno-66-44"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Categoria</span>
+<a id="__codelineno-66-45" name="__codelineno-66-45" href="#__codelineno-66-45"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;categoria_delete.html&quot;</span>
+<a id="__codelineno-66-46" name="__codelineno-66-46" href="#__codelineno-66-46"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<a id="__codelineno-66-47" name="__codelineno-66-47" href="#__codelineno-66-47"></a>
+<a id="__codelineno-66-48" name="__codelineno-66-48" href="#__codelineno-66-48"></a>
+<a id="__codelineno-66-49" name="__codelineno-66-49" href="#__codelineno-66-49"></a><span class="k">class</span> <span class="nc">ProductoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+<a id="__codelineno-66-50" name="__codelineno-66-50" href="#__codelineno-66-50"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-66-51" name="__codelineno-66-51" href="#__codelineno-66-51"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_create.html&quot;</span>
+<a id="__codelineno-66-52" name="__codelineno-66-52" href="#__codelineno-66-52"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-66-53" name="__codelineno-66-53" href="#__codelineno-66-53"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-54" name="__codelineno-66-54" href="#__codelineno-66-54"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-55" name="__codelineno-66-55" href="#__codelineno-66-55"></a>        <span class="s2">&quot;precio&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-56" name="__codelineno-66-56" href="#__codelineno-66-56"></a>        <span class="s2">&quot;disponibilidad&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-57" name="__codelineno-66-57" href="#__codelineno-66-57"></a>        <span class="s2">&quot;categoria&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-58" name="__codelineno-66-58" href="#__codelineno-66-58"></a>    <span class="p">]</span>
+<a id="__codelineno-66-59" name="__codelineno-66-59" href="#__codelineno-66-59"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<a id="__codelineno-66-60" name="__codelineno-66-60" href="#__codelineno-66-60"></a>
+<a id="__codelineno-66-61" name="__codelineno-66-61" href="#__codelineno-66-61"></a>
+<a id="__codelineno-66-62" name="__codelineno-66-62" href="#__codelineno-66-62"></a><span class="k">class</span> <span class="nc">ProductoListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<a id="__codelineno-66-63" name="__codelineno-66-63" href="#__codelineno-66-63"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-66-64" name="__codelineno-66-64" href="#__codelineno-66-64"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_list.html&quot;</span>
+<a id="__codelineno-66-65" name="__codelineno-66-65" href="#__codelineno-66-65"></a>    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;productos&quot;</span>
+<a id="__codelineno-66-66" name="__codelineno-66-66" href="#__codelineno-66-66"></a>
+<a id="__codelineno-66-67" name="__codelineno-66-67" href="#__codelineno-66-67"></a>
+<a id="__codelineno-66-68" name="__codelineno-66-68" href="#__codelineno-66-68"></a><span class="k">class</span> <span class="nc">ProductoUpdateView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+<a id="__codelineno-66-69" name="__codelineno-66-69" href="#__codelineno-66-69"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-66-70" name="__codelineno-66-70" href="#__codelineno-66-70"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_update.html&quot;</span>
+<a id="__codelineno-66-71" name="__codelineno-66-71" href="#__codelineno-66-71"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-66-72" name="__codelineno-66-72" href="#__codelineno-66-72"></a>        <span class="s2">&quot;nombre&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-73" name="__codelineno-66-73" href="#__codelineno-66-73"></a>        <span class="s2">&quot;descripcion&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-74" name="__codelineno-66-74" href="#__codelineno-66-74"></a>        <span class="s2">&quot;precio&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-75" name="__codelineno-66-75" href="#__codelineno-66-75"></a>        <span class="s2">&quot;disponibilidad&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-76" name="__codelineno-66-76" href="#__codelineno-66-76"></a>        <span class="s2">&quot;categoria&quot;</span><span class="p">,</span>
+<a id="__codelineno-66-77" name="__codelineno-66-77" href="#__codelineno-66-77"></a>    <span class="p">]</span>
+<a id="__codelineno-66-78" name="__codelineno-66-78" href="#__codelineno-66-78"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+<a id="__codelineno-66-79" name="__codelineno-66-79" href="#__codelineno-66-79"></a>
+<a id="__codelineno-66-80" name="__codelineno-66-80" href="#__codelineno-66-80"></a>
+<a id="__codelineno-66-81" name="__codelineno-66-81" href="#__codelineno-66-81"></a><span class="k">class</span> <span class="nc">ProductoDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+<a id="__codelineno-66-82" name="__codelineno-66-82" href="#__codelineno-66-82"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Producto</span>
+<a id="__codelineno-66-83" name="__codelineno-66-83" href="#__codelineno-66-83"></a>    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;producto_delete.html&quot;</span>
+<a id="__codelineno-66-84" name="__codelineno-66-84" href="#__codelineno-66-84"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+</code></pre></div>
+<h2 id="templates">Templates</h2>
+<h3 id="creacion-de-categoria">Creación de categoría</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>{% load static %}
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Crear Categoría<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-7" name="__codelineno-67-7" href="#__codelineno-67-7"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% static &#39;css/style.css&#39; %}&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-8" name="__codelineno-67-8" href="#__codelineno-67-8"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-9" name="__codelineno-67-9" href="#__codelineno-67-9"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-10" name="__codelineno-67-10" href="#__codelineno-67-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content section&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-11" name="__codelineno-67-11" href="#__codelineno-67-11"></a>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;block&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-67-12" name="__codelineno-67-12" href="#__codelineno-67-12"></a>                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Crear Categoría<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-67-13" name="__codelineno-67-13" href="#__codelineno-67-13"></a>                <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-67-14" name="__codelineno-67-14" href="#__codelineno-67-14"></a>                    {% csrf_token %}
+<a id="__codelineno-67-15" name="__codelineno-67-15" href="#__codelineno-67-15"></a>                    {{ form.as_p }}
+<a id="__codelineno-67-16" name="__codelineno-67-16" href="#__codelineno-67-16"></a>                    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Crear<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a id="__codelineno-67-17" name="__codelineno-67-17" href="#__codelineno-67-17"></a>                <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<a id="__codelineno-67-18" name="__codelineno-67-18" href="#__codelineno-67-18"></a>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-19" name="__codelineno-67-19" href="#__codelineno-67-19"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-20" name="__codelineno-67-20" href="#__codelineno-67-20"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-67-21" name="__codelineno-67-21" href="#__codelineno-67-21"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="listado-de-categorias">Listado de categorías</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>{% load static %}
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Listado de Categorias<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% static &#39;css/style.css&#39; %}&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-8" name="__codelineno-68-8" href="#__codelineno-68-8"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-9" name="__codelineno-68-9" href="#__codelineno-68-9"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-10" name="__codelineno-68-10" href="#__codelineno-68-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content section&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-11" name="__codelineno-68-11" href="#__codelineno-68-11"></a>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;block&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-68-12" name="__codelineno-68-12" href="#__codelineno-68-12"></a>                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Listado de Categorias<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-68-13" name="__codelineno-68-13" href="#__codelineno-68-13"></a>
+<a id="__codelineno-68-14" name="__codelineno-68-14" href="#__codelineno-68-14"></a>                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;membresia-create&#39; %}&quot;</span><span class="p">&gt;</span>Crear Membresia<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<a id="__codelineno-68-15" name="__codelineno-68-15" href="#__codelineno-68-15"></a>
+<a id="__codelineno-68-16" name="__codelineno-68-16" href="#__codelineno-68-16"></a>                {% for categoria in categorias %}
+<a id="__codelineno-68-17" name="__codelineno-68-17" href="#__codelineno-68-17"></a>                    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-68-18" name="__codelineno-68-18" href="#__codelineno-68-18"></a>                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-68-19" name="__codelineno-68-19" href="#__codelineno-68-19"></a>                            {{ categoria }}
+<a id="__codelineno-68-20" name="__codelineno-68-20" href="#__codelineno-68-20"></a>                        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-68-21" name="__codelineno-68-21" href="#__codelineno-68-21"></a>                    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-68-22" name="__codelineno-68-22" href="#__codelineno-68-22"></a>                {% empty %}
+<a id="__codelineno-68-23" name="__codelineno-68-23" href="#__codelineno-68-23"></a>                    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-68-24" name="__codelineno-68-24" href="#__codelineno-68-24"></a>                        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay categorias disponibles.<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a id="__codelineno-68-25" name="__codelineno-68-25" href="#__codelineno-68-25"></a>                    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a id="__codelineno-68-26" name="__codelineno-68-26" href="#__codelineno-68-26"></a>                {% endfor %}
+<a id="__codelineno-68-27" name="__codelineno-68-27" href="#__codelineno-68-27"></a>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-68-28" name="__codelineno-68-28" href="#__codelineno-68-28"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-29" name="__codelineno-68-29" href="#__codelineno-68-29"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-68-30" name="__codelineno-68-30" href="#__codelineno-68-30"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="actualizacion-de-categorias">Actualización de categorias</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>{% load static %}
+<a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>
+<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Actualizar Categoría<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% static &#39;css/style.css&#39; %}&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content section&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-11" name="__codelineno-69-11" href="#__codelineno-69-11"></a>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;block&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-69-12" name="__codelineno-69-12" href="#__codelineno-69-12"></a>                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Actualizar Categoría<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-69-13" name="__codelineno-69-13" href="#__codelineno-69-13"></a>                <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-69-14" name="__codelineno-69-14" href="#__codelineno-69-14"></a>                    {% csrf_token %}
+<a id="__codelineno-69-15" name="__codelineno-69-15" href="#__codelineno-69-15"></a>                    {{ form.as_p }}
+<a id="__codelineno-69-16" name="__codelineno-69-16" href="#__codelineno-69-16"></a>                    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Actualizar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a id="__codelineno-69-17" name="__codelineno-69-17" href="#__codelineno-69-17"></a>                <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<a id="__codelineno-69-18" name="__codelineno-69-18" href="#__codelineno-69-18"></a>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-19" name="__codelineno-69-19" href="#__codelineno-69-19"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-20" name="__codelineno-69-20" href="#__codelineno-69-20"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-69-21" name="__codelineno-69-21" href="#__codelineno-69-21"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="borrado-de-categorias">Borrado de categorias</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>{% load static %}
+<a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>
+<a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-70-4" name="__codelineno-70-4" href="#__codelineno-70-4"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-5" name="__codelineno-70-5" href="#__codelineno-70-5"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-6" name="__codelineno-70-6" href="#__codelineno-70-6"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Eliminar Categoria<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-7" name="__codelineno-70-7" href="#__codelineno-70-7"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% static &#39;css/style.css&#39; %}&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-8" name="__codelineno-70-8" href="#__codelineno-70-8"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-9" name="__codelineno-70-9" href="#__codelineno-70-9"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-10" name="__codelineno-70-10" href="#__codelineno-70-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content section&quot;</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-11" name="__codelineno-70-11" href="#__codelineno-70-11"></a>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;block&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-70-12" name="__codelineno-70-12" href="#__codelineno-70-12"></a>                <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Eliminar Categoria<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<a id="__codelineno-70-13" name="__codelineno-70-13" href="#__codelineno-70-13"></a>                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>¿Estás seguro de que quieres eliminar la categoria &quot;{{ object.nombre }}&quot;?<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-70-14" name="__codelineno-70-14" href="#__codelineno-70-14"></a>                <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-70-15" name="__codelineno-70-15" href="#__codelineno-70-15"></a>                    {% csrf_token %}
+<a id="__codelineno-70-16" name="__codelineno-70-16" href="#__codelineno-70-16"></a>                    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Eliminar<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a id="__codelineno-70-17" name="__codelineno-70-17" href="#__codelineno-70-17"></a>                <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<a id="__codelineno-70-18" name="__codelineno-70-18" href="#__codelineno-70-18"></a>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-70-19" name="__codelineno-70-19" href="#__codelineno-70-19"></a>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-20" name="__codelineno-70-20" href="#__codelineno-70-20"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span> 
+<a id="__codelineno-70-21" name="__codelineno-70-21" href="#__codelineno-70-21"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="urls">URLs</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a><span class="kn">from</span> <span class="nn">.views</span> <span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>    <span class="n">HomePageView</span><span class="p">,</span>
+<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a>    <span class="n">CategoriaCreateView</span><span class="p">,</span>
+<a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a>    <span class="n">CategoriaListView</span><span class="p">,</span>
+<a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a>    <span class="n">CategoriaUpdateView</span><span class="p">,</span>
+<a id="__codelineno-71-7" name="__codelineno-71-7" href="#__codelineno-71-7"></a>    <span class="n">CategoriaDeleteView</span><span class="p">,</span>
+<a id="__codelineno-71-8" name="__codelineno-71-8" href="#__codelineno-71-8"></a>    <span class="n">ProductoCreateView</span><span class="p">,</span>
+<a id="__codelineno-71-9" name="__codelineno-71-9" href="#__codelineno-71-9"></a>    <span class="n">ProductoListView</span><span class="p">,</span>
+<a id="__codelineno-71-10" name="__codelineno-71-10" href="#__codelineno-71-10"></a>    <span class="n">ProductoUpdateView</span><span class="p">,</span>
+<a id="__codelineno-71-11" name="__codelineno-71-11" href="#__codelineno-71-11"></a>    <span class="n">ProductoDeleteView</span><span class="p">,</span>
+<a id="__codelineno-71-12" name="__codelineno-71-12" href="#__codelineno-71-12"></a><span class="p">)</span>
+<a id="__codelineno-71-13" name="__codelineno-71-13" href="#__codelineno-71-13"></a>
+<a id="__codelineno-71-14" name="__codelineno-71-14" href="#__codelineno-71-14"></a><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-71-15" name="__codelineno-71-15" href="#__codelineno-71-15"></a>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">HomePageView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">),</span>
+<a id="__codelineno-71-16" name="__codelineno-71-16" href="#__codelineno-71-16"></a>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;categoria/create/&quot;</span><span class="p">,</span> <span class="n">CategoriaCreateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;categoria_create&quot;</span><span class="p">),</span>
+<a id="__codelineno-71-17" name="__codelineno-71-17" href="#__codelineno-71-17"></a>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;categoria/list/&quot;</span><span class="p">,</span> <span class="n">CategoriaListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;categoria_list&quot;</span><span class="p">),</span>
+<a id="__codelineno-71-18" name="__codelineno-71-18" href="#__codelineno-71-18"></a>    <span class="n">path</span><span class="p">(</span>
+<a id="__codelineno-71-19" name="__codelineno-71-19" href="#__codelineno-71-19"></a>        <span class="s2">&quot;categoria/update/&lt;int:pk&gt;/&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-20" name="__codelineno-71-20" href="#__codelineno-71-20"></a>        <span class="n">CategoriaUpdateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span>
+<a id="__codelineno-71-21" name="__codelineno-71-21" href="#__codelineno-71-21"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;categoria_update&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-22" name="__codelineno-71-22" href="#__codelineno-71-22"></a>    <span class="p">),</span>
+<a id="__codelineno-71-23" name="__codelineno-71-23" href="#__codelineno-71-23"></a>    <span class="n">path</span><span class="p">(</span>
+<a id="__codelineno-71-24" name="__codelineno-71-24" href="#__codelineno-71-24"></a>        <span class="s2">&quot;categoria/delete/&lt;int:pk&gt;/&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-25" name="__codelineno-71-25" href="#__codelineno-71-25"></a>        <span class="n">CategoriaDeleteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span>
+<a id="__codelineno-71-26" name="__codelineno-71-26" href="#__codelineno-71-26"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;categoria_delete&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-27" name="__codelineno-71-27" href="#__codelineno-71-27"></a>    <span class="p">),</span>
+<a id="__codelineno-71-28" name="__codelineno-71-28" href="#__codelineno-71-28"></a>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;producto/create/&quot;</span><span class="p">,</span> <span class="n">ProductoCreateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;producto_create&quot;</span><span class="p">),</span>
+<a id="__codelineno-71-29" name="__codelineno-71-29" href="#__codelineno-71-29"></a>    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;producto/list/&quot;</span><span class="p">,</span> <span class="n">ProductoListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;producto_list&quot;</span><span class="p">),</span>
+<a id="__codelineno-71-30" name="__codelineno-71-30" href="#__codelineno-71-30"></a>    <span class="n">path</span><span class="p">(</span>
+<a id="__codelineno-71-31" name="__codelineno-71-31" href="#__codelineno-71-31"></a>        <span class="s2">&quot;producto/update/&lt;int:pk&gt;/&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-32" name="__codelineno-71-32" href="#__codelineno-71-32"></a>        <span class="n">ProductoUpdateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span>
+<a id="__codelineno-71-33" name="__codelineno-71-33" href="#__codelineno-71-33"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;producto_update&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-34" name="__codelineno-71-34" href="#__codelineno-71-34"></a>    <span class="p">),</span>
+<a id="__codelineno-71-35" name="__codelineno-71-35" href="#__codelineno-71-35"></a>    <span class="n">path</span><span class="p">(</span>
+<a id="__codelineno-71-36" name="__codelineno-71-36" href="#__codelineno-71-36"></a>        <span class="s2">&quot;producto/delete/&lt;int:pk&gt;/&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-37" name="__codelineno-71-37" href="#__codelineno-71-37"></a>        <span class="n">ProductoDeleteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span>
+<a id="__codelineno-71-38" name="__codelineno-71-38" href="#__codelineno-71-38"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;producto_delete&quot;</span><span class="p">,</span>
+<a id="__codelineno-71-39" name="__codelineno-71-39" href="#__codelineno-71-39"></a>    <span class="p">),</span>
+<a id="__codelineno-71-40" name="__codelineno-71-40" href="#__codelineno-71-40"></a><span class="p">]</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/LPUMOGO22"  target="_blank" rel="noopener">Luis Enrique Mora Gómez</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/FVCW5mBQVs" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LPUMOGO22" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mora-gómez-luis-enrique-5a7411221/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

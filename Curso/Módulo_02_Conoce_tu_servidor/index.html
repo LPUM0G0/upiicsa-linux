@@ -1,0 +1,1890 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lpumogo22.github.io/upiicsa-linux/Curso/M%C3%B3dulo_02_Conoce_tu_servidor/">
+      
+      
+        <link rel="prev" href="../M%C3%B3dulo_01_Introducci%C3%B3n/">
+      
+      
+        <link rel="next" href="../M%C3%B3dulo_03_Navegaci%C3%B3n_b%C3%A1sica/">
+      
+      
+      <link rel="icon" href="../../assets/lin.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Módulo 02 Conoce tu servidor - Taller de Introducción a Linux</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Módulo 02 Conoce tu servidor - Taller de Introducción a Linux" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Curso/Módulo_02_Conoce_tu_servidor.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://lpumogo22.github.io/upiicsa-linux/Curso/M%C3%B3dulo_02_Conoce_tu_servidor/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Módulo 02 Conoce tu servidor - Taller de Introducción a Linux" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://lpumogo22.github.io/upiicsa-linux/assets/images/social/Curso/Módulo_02_Conoce_tu_servidor.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduccion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-header__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taller de Introducción a Linux
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Módulo 02 Conoce tu servidor
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../M%C3%B3dulo_01_Introducci%C3%B3n/" class="md-tabs__link">
+          
+  
+  Curso
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Gu%C3%ADas/AWS/" class="md-tabs__link">
+          
+  
+  Guías
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taller de Introducción a Linux" class="md-nav__button md-logo" aria-label="Taller de Introducción a Linux" data-md-component="logo">
+      
+  <img src="../../assets/lin.png" alt="logo">
+
+    </a>
+    Taller de Introducción a Linux
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Curso
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Curso
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_01_Introducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 01 Introducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Módulo 02 Conoce tu servidor
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 02 Conoce tu servidor
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tus-tareas-para-este-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tus tareas para este módulo:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-un-cliente-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de un cliente SSH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de un cliente SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceder-a-la-terminal-de-nuestro-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceder a la terminal de nuestro equipo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceder a la terminal de nuestro equipo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminal-en-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal en Mac
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-en-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminal en Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conectarnos-al-servidor-mediante-usuario-y-contrasena" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectarnos al servidor mediante usuario y contraseña
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conectarnos-al-servidor-mediante-usuario-y-documento-de-identidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conectarnos al servidor mediante usuario y documento de identidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion-de-uso-del-cliente-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión de uso del cliente SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicios-recomendados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios recomendados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-para-conocer-nuestro-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos para conocer nuestro servidor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos para conocer nuestro servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#informacion-general-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Información General del Servidor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-de-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Información de Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medir-los-recursos-del-sistema-cpu-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medir los recursos del sistema (CPU, RAM)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medir-el-uso-del-disco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medir el uso del disco
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacion-basica-de-redes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Información básica de redes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion-de-los-comandos-para-conocer-el-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusión de los comandos para conocer el servidor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicios-recomendados_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios recomendados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_03_Navegaci%C3%B3n_b%C3%A1sica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 03 Navegación básica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_04_Ejecuci%C3%B3n_como_administrador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 04 Ejecución como administrador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_05_Instalaci%C3%B3n_de_software_y_exploraci%C3%B3n_del_sistema_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 05 Instalación de software y exploración del sistema de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_06_Herramientas_de_visualizaci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 06 Herramientas de visualización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_07_Edici%C3%B3n_con_%22vim%22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 07 Edición con "vim"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_08_Servidores_y_sus_servicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 08 Servidores y sus servicios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_09_Procesamiento_de_texto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 09 Procesamiento de texto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_10_Redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 10 Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_11_Automatizaci%C3%B3n_de_tareas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 11 Automatización de tareas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_12_B%C3%BAsqueda_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 12 Búsqueda de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_13_Transferencia_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 13 Transferencia de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_14_Gesti%C3%B3n_de_usuarios_y_grupos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 14 Gestión de usuarios y grupos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_15_Gesti%C3%B3n_de_permisos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 15 Gestión de permisos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_16_Repositorios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 16 Repositorios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_17_Archivado_y_compresi%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 17 Archivado y compresión
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_18_Compilaci%C3%B3n_desde_c%C3%B3digo_fuente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 18 Compilación desde código fuente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_19_Rotaci%C3%B3n_de_registros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 19 Rotación de registros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_20_Gesti%C3%B3n_avanzada_de_archivos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 20 Gestión avanzada de archivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_21_Scripting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 21 Scripting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M%C3%B3dulo_22_Conclusiones_y_pr%C3%B3ximos_pasos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 22 Conclusiones y próximos pasos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guías
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guías
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/AWS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/Django/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/Git_y_Github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git y Github
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gu%C3%ADas/virtualbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Módulo 02 Conoce tu servidor</h1>
+
+<h2 id="introduccion">Introducción</h2>
+<p>Para este punto del taller, se espera que tengas un conocimiento básico sobre qué es Linux y que cuentes con un servidor configurado en una máquina virtual o en la nube. Se recomienda que tu servidor tenga la última versión de Ubuntu Server LTS (aunque un buen administrador de servidores Linux debería poder moverse cómodamente entre varias versiones del sistema, no solo Ubuntu, por el momento Ubuntu es un buen primer acercamiento).</p>
+<p>Una vez que hayas alcanzado un buen nivel de manejo de la línea de comandos, te darás cuenta de que tus habilidades son útiles no solo en todas las variantes estándar de Linux, sino que las puedes extrapolar a Android, OSx de Apple, OpenBSD, Solaris y IBM AIX. A lo largo del taller estarás trabajando en Linux, pero la mayoría de lo que aprenderás es aplicable a cualquier sistema derivado de <a href="https://youtu.be/tc4ROCJYbm0?si=UCENI-WS2zKO6NkQ">UNIX</a>.</p>
+<h2 id="tus-tareas-para-este-modulo">Tus tareas para este módulo:</h2>
+<ul>
+<li>Conectarse a tu servidor mediante un cliente SSH.</li>
+<li>Ejecutar unos cuantos comandos para ver el estado de tu servidor.</li>
+</ul>
+<h2 id="uso-de-un-cliente-ssh">Uso de un cliente SSH</h2>
+<p>El acceso remoto solía realizarse mediante un protocolo llamado <a href="https://wiki.texto-plano.xyz/doku.php?id=telnet#:~:text=El%20protocolo%20Telnet%20fue%20desarrollado,de%20cómputo%20de%20tiempo%20compartido.">Telnet</a>, pero ahora siempre se utiliza el protocolo SSH (Secure SHell), que es mucho más seguro.</p>
+<p>Saber cómo usar un cliente SSH es una habilidad básica de cualquier administrador de sistemas. Recuerda que al hablar de un "cliente", nos referimos al sistema que le solicita algo al "servidor". En este caso, solicitaremos una conexión <em>remota</em> (es remota porque no requiere de un cable directo entre nuestro cliente y servidor, sino que puede establecerse mediante una conexión de red).</p>
+<p>El cliente SSH no depende del servidor, sino del equipo en el que estemos trabajando. Asumiremos que se está trabajando en una PC con Windows o macOS. Dichos sistemas, en sus últimas versiones, suelen tener instalado un cliente SSH en su respectiva línea de comandos. Sin embargo, también es posible instalar clientes externos como <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a>, <a href="https://www.solarwinds.com/free-tools/solar-putty?irgwc=1&amp;CMP=BIZ-TAD-SWTH-SW_WW_X_X_PPD_FT_EN_0_0-FSPTY-X_0_X_X_X_X-X">Solar-PuTTY</a>, <a href="https://mobaxterm.mobatek.net">MobaXterm</a>, <a href="https://termius.com/free-ssh-client-for-windows">Termius</a>, entre otros.</p>
+<p>En este taller haremos uso de las opciones nativas de los sistemas, pero si hay algún estudiante con una versión inferior a Windows 10, le sugerimos instalar <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a>.</p>
+<h3 id="acceder-a-la-terminal-de-nuestro-equipo">Acceder a la terminal de nuestro equipo</h3>
+<div class="admonition tip">
+<p class="admonition-title">Términos confusos</p>
+<p>La definición exhaustiva de qué es una <strong>terminal</strong> y qué es una <strong>shell</strong> suele ser confusa para los que nos iniciamos en estos temas. Para fines prácticos, emplearemos los términos siguientes como sinónimos, pero estrictamente hablando son cosas distintas:</p>
+<ul>
+<li><strong>Terminal</strong></li>
+<li><strong>Línea de comandos</strong> </li>
+<li><strong>Shell</strong></li>
+<li><strong>Consola</strong></li>
+<li><strong>Intérprete de comandos</strong></li>
+</ul>
+</div>
+<details class="note">
+<summary>¿Qué es una Shell?</summary>
+<p>Es un programa informático que proporciona una interfaz de línea de comandos dentro de una terminal virtual para que los usuarios interactúen con el sistema operativo. La shell interpreta los comandos ingresados por el usuario y los ejecuta. Proporciona un entorno en el que los usuarios pueden ejecutar programas, acceder a archivos, administrar procesos y realizar diversas tareas del sistema. Algunos ejemplos de shells populares son Bash (Bourne Again Shell) en sistemas Unix/Linux y PowerShell en Windows (Z Shell).</p>
+</details>
+<details class="note">
+<summary>¿Qué es una Terminal?</summary>
+<p>Es un dispositivo físico o una interfaz de software (terminal virtual) que permite a un usuario interactuar con un sistema informático a través de una línea de comandos. En el pasado, los terminales eran dispositivos físicos que se conectaban a los mainframes o servidores a través de cables.
+En la actualidad, al referirnos a terminales nos solemos referir a terminales virtuales.</p>
+</details>
+<p>El cliente SSH no es más que un software con una peculiaridad <strong>NO tiene interfaz gráfica</strong>, en consecuencia, la forma en la que podemos interactuar con él es mediante comandos de texto, la interfaz que nos permite hablar con nuestro sistema operativo con comandos es la Terminal.</p>
+<h4 id="terminal-en-mac">Terminal en Mac</h4>
+<p>En Mac contamos con una terminal instalada por defecto, llamada <a href="https://es.wikipedia.org/wiki/Terminal_(macOS)#:~:text=El%20Terminal%20originado%20en%20NeXTSTEP,y%20su%20integración%20con%20Spotlight.">Terminal</a>.</p>
+<ol>
+<li>Abre la "Spotlight Search" "shortcut" de teclas <code>COMMAND</code> + <code>ESPACIO</code>.
+<img alt="IMG-04" src="../../assets/mdos_04.png" /></li>
+<li>Escribe el nombre del programa que deseamos ejecutar como está escrito a continuación <code>Terminal</code> y de pulsa <code>ENTER</code> en tu teclado.
+<img alt="IMG-05" src="../../assets/mdos_05.png" /></li>
+<li>En automático se abrirá una ventana con una interfaz azul y letras blancas, esa es nuestra terminal.
+<img alt="IMG-06" src="../../assets/mdos_06.png" /></li>
+</ol>
+<h4 id="terminal-en-windows">Terminal en Windows</h4>
+<p>En Windows contamos con dos terminales distintas instaladas por defecto, el <a href="https://es.wikipedia.org/wiki/Símbolo_del_sistema_de_Windows">CMD</a> y la <a href="https://es.wikipedia.org/wiki/PowerShell">Powershell</a>, para seguir este curso haremos uso de la Powershell.</p>
+<ol>
+<li>Abre la herramienta de ejecución mediante el "shortcut" de teclas <code>WINDOWS</code> + <code>R</code>.
+<img alt="IMG-01" src="../../assets/mdos_01.png" /></li>
+<li>Escribe el nombre del programa que deseamos ejecutar como esta escrito a continuación <code>powershell</code> y de click en <code>OK</code>.
+<img alt="IMG-02" src="../../assets/mdos_02.png" /></li>
+<li>
+<p>En automático se abrirá una ventana con una interfaz azul y letras blancas, esa es nuestra terminal.
+<img alt="IMG-03" src="../../assets/mdos_03.png" /></p>
+<details class="tip">
+<summary>Abrir Powershell como administrador desde una sesión normal</summary>
+<p>Habrá ocasiones en las que requiramos elevar los permisos de ejecución de nuestra terminal, para ello deberemos lanzar otra terminal con permisos de administrador, esto lo hacemos mediante el siguiente comando en PS.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>start-process powershell -verb runas
+</code></pre></div>
+</details>
+</li>
+</ol>
+<h3 id="conectarnos-al-servidor-mediante-usuario-y-contrasena">Conectarnos al servidor mediante usuario y contraseña</h3>
+<p>La conexión mediante usuario y contraseña es la opción por defecto para las instalaciones en máquina virtual, asegúrate de que tu VM esté encendida y que conozcas su dirección IP (si no la conoces la puedes obtener mediante el comando especificado en el <a href="../../Gu%C3%ADas/virtualbox/#ingrese-por-primera-vez-al-sistema">"Paso 3" de la sección "Ingrese por primera vez al sistema" en la guía de VB</a>).</p>
+<p>Datos de conexión</p>
+<table>
+<thead>
+<tr>
+<th>Servidor</th>
+<th>Usuario</th>
+<th>Contraseña</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.213</td>
+<td>adminupiicsa</td>
+<td>taller</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Abra su terminal</li>
+<li>
+<p>Ingrese el siguiente comando (sustituya los valores entre &lt;&gt; por el valor real, por ejemplo <code>&lt;usuario&gt;</code> sería <code>adminupiicsa</code>)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh<span class="w"> </span>&lt;usuario&gt;@&lt;servidor&gt;
+</code></pre></div>
+<p>En mi caso:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh<span class="w"> </span>adminupiicsa@192.168.1.213
+</code></pre></div></p>
+<p><img alt="IMG-12" src="../../assets/mdos_12.png" /></p>
+</li>
+<li>
+<p>Te preguntará si quieres añadir este servidor a la lista de servidores conocidos, debes escribir <code>yes</code> y dar <code>ENTER</code> en tu teclado.</p>
+<p><img alt="IMG-09" src="../../assets/mdos_09.png" /></p>
+</li>
+<li>
+<p>Ingresa la contraseña (<strong>será invisible</strong> así que no te preocupes si escribes y no ves ningún caracter en la terminal, debes ser cuidadoso de ingresar los datos correctos).
+    <img alt="IMG-10" src="../../assets/mdos_10.png" /></p>
+</li>
+<li>
+<p>Si tus credenciales fueron correctas verás un mensaje de bienvenida al server similar al que se muestra en la siguiente imagen.</p>
+<p><img alt="IMG-11" src="../../assets/mdos_11.png" /></p>
+</li>
+</ol>
+<h3 id="conectarnos-al-servidor-mediante-usuario-y-documento-de-identidad">Conectarnos al servidor mediante usuario y documento de identidad</h3>
+<p>La conexión mediante usuario y documento de identidad es la opción por defecto para las instalaciones de servidores en la nube, asegúrate de que tu VPS esté encendido y que conozcas su dirección IP (puedes obtenerla siguiendo esta parte de la guía de AWS <a href="../../Gu%C3%ADas/AWS/#obtener-la-ip-de-tu-vps">Obtener IP de tu VPS</a>). </p>
+<p>Datos de conexión</p>
+<table>
+<thead>
+<tr>
+<th>Servidor</th>
+<th>Usuario</th>
+<th>Documento de Identidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.21.166.252</td>
+<td>ubuntu</td>
+<td>id_rsa_UPIICSA_2NV20.pem</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Abra su terminal</p>
+<p><strong>Paso extra exclusivo de MAC</strong>: 
+Si y solo si te encuentras trabajando en una MAC has caso a este paso, de lo contrario ve directo al paso 2.</p>
+<p>Ejecuta el siguiente comando, de momento no entraremos en detalles de lo que hace, pero sin él, el archivo no será válido para el cliente SSH y no podremos ingresar en el servidor (sustituya los valores entre &lt;&gt; por el valor real, por ejemplo <code>&lt;nombre_clave.pem&gt;</code> sería <code>id_rsa_UPIICSA_2NV20.pem</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>~/Downloads<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>&lt;nombre_clave.pem&gt;<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>./&lt;nombre_clave.pem&gt;<span class="w"> </span>~/.ssh/<span class="w"> </span>
+</code></pre></div>
+<p>Mi caso:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>~/Downloads<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>id_rsa_UPIICSA_2NV20.pem<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>./id_rsa_UPIICSA_2NV20.pem<span class="w"> </span>~/.ssh/<span class="w"> </span>
+</code></pre></div>
+</li>
+<li>
+<p>Ingrese el siguiente comando (sustituya los valores entre &lt;&gt; por el valor real, por ejemplo <code>&lt;usuario&gt;</code> sería <code>ubuntu</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>&lt;ruta_del_archivo&gt;<span class="w"> </span>&lt;usuario&gt;@&lt;servidor&gt;
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Diferencias entre las rutas de Windows y Mac</p>
+<p>Lee con cuidado los comandos de Windows y de Mac que se encuentran debajo de este recuadro, notarás que son muy similares, pero hay diferencias.</p>
+<ul>
+<li>La primera es la carpeta donde se encuentra nuestro documento de identidad, originalmente ambos se encontraban en la respectiva carpeta de descargas (Downloads), pero en MacOS lo cambiamos a otra carpeta llamada ".ssh" en el paso adicional.</li>
+<li>La segunda es cómo separamos los valores de carpetas, en Mac usamos la diagonal tradicional <code>/</code> y en Windows la diagonal invertida <code>\</code> </li>
+</ul>
+</div>
+<p><strong>Windows</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ssh -i ~\Downloads\id_rsa_UPICSA_2NV20.pem ubuntu@3.21.166.252
+</code></pre></div></p>
+<p><img alt="IMG-13" src="../../assets/mdos_13.png" /></p>
+<p><strong>MacOS</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/id_rsa_UPIICSA_2NV20.pem<span class="w"> </span>ubuntu@3.21.166.252
+</code></pre></div></p>
+<p><img alt="IMG-17" src="../../assets/mdos_17.png" /></p>
+</li>
+<li>
+<p>Te preguntará si quieres añadir este servidor a la lista de servidores conocidos, debes escribir <code>yes</code> y dar <code>ENTER</code> en tu teclado.</p>
+<p><img alt="IMG-18" src="../../assets/mdos_18.png" /></p>
+</li>
+<li>
+<p>Si tus credenciales fueron correctas verás un mensaje de bienvenida al server similar al que se muestra en la siguiente imagen.</p>
+<p><img alt="IMG-19" src="../../assets/mdos_19.png" /></p>
+</li>
+</ol>
+<h3 id="conclusion-de-uso-del-cliente-ssh">Conclusión de uso del cliente SSH</h3>
+<p>Hemos visto dos maneras de ingresar a los servidores, para ambas usamos el mismo cliente SSH pero con diferentes parámetros (existen más parámetros pero no los veremos por el momento). </p>
+<div class="admonition note">
+<p class="admonition-title">Accesos mixtos</p>
+<p>Es importante aclarar que el mismo servidor puede tener habilitados los dos tipos de acceso a la vez.</p>
+</div>
+<ul>
+<li>Usuario/Contraseña
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ssh<span class="w"> </span>&lt;usuario&gt;@&lt;server&gt;
+</code></pre></div></li>
+<li>Usuario/Documento
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ssh<span class="w"> </span>&lt;usuario&gt;@&lt;server&gt;<span class="w"> </span>-i<span class="w"> </span>&lt;documento_de_identidad&gt;
+</code></pre></div></li>
+</ul>
+<details class="note">
+<summary>Nota sobre el orden de los parámetros</summary>
+<p>Notarás que el comando Usuario/Documento de la explicación y el comando mostrado aquí en las conclusiones tienen un orden distinto, en realidad no importa el orden de los parámetros siempre y cuando respetes la siguiente notación <code>parámetro</code> <code>valor</code>, ejemplo <code>-i</code> <code>~/.ssh/id_rsa</code> si lo pusieses al revés no funcionaría. </p>
+<ul>
+<li>Correcto: <code>ssh usuario@172.31.32.10 -i ~/.ssh/id_rsa</code></li>
+<li>Incorrecto: <code>ssh usuario@172.31.32.10 ~/.ssh/id_rsa -i</code></li>
+<li>Correcto: <code>ssh -i ~/.ssh/id_rsa usuario@172.31.32.10</code></li>
+<li>Incorrecto: <code>ssh ~/.ssh/id_rsa -i usuario@172.31.32.10</code></li>
+</ul>
+</details>
+<p>Posteriormente veremos como configurar cada uno de estos tipos de acceso en el servidor.</p>
+<h3 id="ejercicios-recomendados">Ejercicios recomendados</h3>
+<p>La siguiente tabla contiene una colección de datos relativos a servidores, usuarios, contraseñas y documentos de identidad.</p>
+<p>Lee las preguntas y responde lo que se pide con ayuda de la tabla.</p>
+<table>
+<thead>
+<tr>
+<th>Servidor</th>
+<th>Usuario</th>
+<th>Contraseña</th>
+<th>Documento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>172.31.32.10</td>
+<td>juan</td>
+<td>Juan1*</td>
+<td>-</td>
+</tr>
+<tr>
+<td>172.31.32.10</td>
+<td>pedro</td>
+<td></td>
+<td>~/.ssh/id_rsa_base_de_datos.pem</td>
+</tr>
+<tr>
+<td>172.31.32.10</td>
+<td>alberto</td>
+<td></td>
+<td>~\.ssh\id_rsa_base_de_datos.pem</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 1</p>
+<p>¿Cuál es el la IP del servidor de la empresa?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 2</p>
+<p>Pedro te llamó por teléfono para que le recuerdes el comando con el cual se puede conectar al servidor. ¿Qué comando le mandarías por mensaje? </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 3</p>
+<p>Juan dice que tiene problemas para conectarse porque su computadora no lo deja ingresar la contraseña. ¿Cómo lo ayudarías?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 4</p>
+<p>¿Podrías inferir cuál es el sistema operativo de la computadora de Alberto?</p>
+</div>
+<hr />
+<h2 id="comandos-para-conocer-nuestro-servidor">Comandos para conocer nuestro servidor</h2>
+<h3 id="informacion-general-del-servidor">Información General del Servidor</h3>
+<p>Como recordarás, Linux tiene diferentes versiones a las que llamamos "Distribuciones" o "Distros". Nosotros instalamos "Ubuntu Server LTS". Es muy probable que, si te preguntan "¿Qué versión de Ubuntu Server LTS tienes corriendo en tu servidor?", no lo recuerdes. Esto es relevante para saber cuándo una versión debe ser actualizada porque tiene alguna vulnerabilidad detectada o para saber si nuestra versión es compatible con algún software.</p>
+<p><strong>¿Cómo conocer la distro y su versión?</strong></p>
+<p>Hay dos maneras de conocer esta información, la primera aplica para cualquier sistema Linux, la segunda requiere la instalación de herramientas adicionales en algunas distribuciones de Linux (en nuestro caso ya también está instalada por defecto).</p>
+<ul>
+<li>
+<p>Manera General (<a href="https://www.man7.org/linux/man-pages/man5/os-release.5.html">os_release</a>)</p>
+<p>Lee el contenido del archivo <code>/etc/os-release</code> mediante el comando:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cat<span class="w"> </span>/etc/os-release
+</code></pre></div></p>
+<p><img alt="IMG-20" src="../../assets/mdos_20.png" /></p>
+</li>
+<li>
+<p><a href="https://refspecs.linuxfoundation.org/LSB_3.0.0/LSB-PDA/LSB-PDA/lsbrelease.html">Manera Alternativa</a></p>
+<p>Ejecute el comando: 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>lsb_release<span class="w"> </span>-a
+</code></pre></div>
+<img alt="IMG-21" src="../../assets/mdos_21.png" /></p>
+</li>
+</ul>
+<p><a href="https://www.man7.org/linux/man-pages/man1/uname.1.html"><strong>¿Cómo saber la arquitectura y kernel?</strong></a></p>
+<p>Más allá de la distribución hay información que puede llegar a ser útil como la versión del Kernel, el tipo de procesador y la arquitectura del sistema, para ello existe el siguiente comando:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>uname<span class="w"> </span>-a
+</code></pre></div>
+<img alt="IMG-22" src="../../assets/mdos_22.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man1/uptime.1.html"><strong>¿Cómo saber cuánto tiempo lleva activo el server?</strong></a></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>uptime
+</code></pre></div>
+<img alt="IMG-23" src="../../assets/mdos_23.png" /></p>
+<p>El dato <code>20:20:26</code> es la hora a la que se realizó la consulta (en horario del servidor), el tiempo activo sería <code>5:54</code>, 5 horas con 54 minutos, <code>1 user</code> es la cantidad de usuarios conectados al servidor actualmente. </p>
+<p>Otra manera de obtener el tiempo activo del servidor es leer el contenido del archivo "<a href="https://unix.stackexchange.com/questions/753868/proc-uptime-command-gives-weird-result"><code>/proc/uptime</code></a>" mediante el comando:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cat<span class="w"> </span>/proc/uptime
+</code></pre></div>
+<img alt="IMG-24" src="../../assets/mdos_24.png" /></p>
+<p>Este comando dará dos valores, nos interesa el valor de la izquierda, este es el tiempo que lleva activo el servidor en segundos, entonces bastará con dividir dicho valor entre 60 para saber los minutos que lleva activo el servidor y de nuevo entre 60 para saber las horas que lleva activo, etc.</p>
+<div class="arithmatex">\[
+\frac{21607}{60 \times 60} \approx 6.00 \space horas
+\]</div>
+<p><a href="https://www.man7.org/linux/man-pages/man1/whoami.1.html"><strong>¿Cómo saber qué usuario soy?</strong></a></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>whoami
+</code></pre></div>
+<img alt="IMG-25" src="../../assets/mdos_25.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man1/who.1.html"><strong>¿Cómo saber qué usuarios están en el sistema en este momento?</strong></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>who
+</code></pre></div>
+<img alt="IMG-26" src="../../assets/mdos_26.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man1/w.1.html"><strong>¿Cómo saber qué hacen los usuarios que están en el sistema en este momento?</strong></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>w
+</code></pre></div>
+<img alt="IMG-27" src="../../assets/mdos_27.png" /></p>
+<hr />
+<h3 id="informacion-de-hardware">Información de Hardware</h3>
+<p>El comando <a href="https://manpages.ubuntu.com/manpages/trusty/en/man1/lshw.1.html"><code>lshw</code></a> puede dar información detallada sobre la configuración de Hardware, y existen varios parámetros que se pueden agregar para filtrar la información que queremos ver, no obstante existen más herramientas con las que podemos obtener datos sobre el hardware, a continuación listamos algunas alternativas más específicas.  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>lshw
+</code></pre></div>
+<p>Muestra de un estracto del output del comando <code>lshw</code></p>
+<p><img alt="IMG-28" src="../../assets/mdos_28.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man1/lscpu.1.html"><strong>Mostrar información acerca de la arquitectura del CPU</strong></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>lscpu
+</code></pre></div></p>
+<p><img alt="IMG-29" src="../../assets/mdos_29.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man8/lsblk.8.html"><strong>Listar los dispositivos Block</strong></a></p>
+<div class="admonition note">
+<p class="admonition-title">¿Qué es un block device?</p>
+<p>Son dispositivos que trabajan en la transmisión de <strong>bloques</strong> de datos, como lo son:</p>
+<ul>
+<li>Discos Duros</li>
+<li>SSD</li>
+<li>memorias Flash</li>
+<li>CD-ROM </li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>lsblk
+</code></pre></div>
+<p><img alt="IMG-30" src="../../assets/mdos_30.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man8/lspci.8.html"><strong>Listar los dispositivos PCI</strong></a></p>
+<div class="admonition note">
+<p class="admonition-title">¿Qué es un dispositivo PCI?</p>
+<p>Las siglas PCI quieren decir "Peripheral Component Interconnect", en español "Interconexión de Componentes Periféricos". PCI es el BUS estándar para conectar dispositivos directamente a la placa base, algunos de los dispositivos que comúnmente se conectan por PCI a un servidor son:</p>
+<ul>
+<li>Tarjetas de red Ethernet / Wi-fi</li>
+<li>Tarjetas de video</li>
+<li>Tarjetas de audio</li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>lspci
+</code></pre></div>
+<p><img alt="IMG-31" src="../../assets/mdos_31.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man8/lsusb.8.html"><strong>Listar los dispositivos USB</strong></a></p>
+<div class="admonition note">
+<p class="admonition-title">¿Qué es un dispositivo USB?</p>
+<p>Las siglas USB quieren decir "Universal Serial Bus", en español "Bus Universal en Serie". USB es el BUS estándar para conectar y alimentar periféricos externos a una computadora, algunos de los dispositivos que comúnmente se conectan por USB a un servidor son:</p>
+<ul>
+<li>Teclados</li>
+<li>Ratones</li>
+<li>Impresoras</li>
+</ul>
+</div>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>lsusb
+</code></pre></div>
+<img alt="IMG-32" src="../../assets/mdos_32.png" /></p>
+<hr />
+<h3 id="medir-los-recursos-del-sistema-cpu-ram">Medir los recursos del sistema (CPU, RAM)</h3>
+<p>Un proceso común para cualquier administrador de servidores es verificar las estadísticas de recursos del equipo, las razones son variadas, pero es algo que sin duda harás con cierta frecuencia. </p>
+<p><strong>Memoria</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Termino de uso frecuente</p>
+<p>Es muy común que a la memoria RAM se le llame solamente memoria.</p>
+</div>
+<p>Es poco probable que <a href="https://www.linuxatemyram.com">Linux consuma toda la memoria disponible</a>, pero es útil conocer una manera de ver la cantidad de <a href="https://www.man7.org/linux/man-pages/man1/free.1.html">memoria usada</a>, para ello ocupamos el comando:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>free<span class="w"> </span>-h
+</code></pre></div>
+<details class="note">
+<summary>¿De dónde viene la información de <code>free</code>?</summary>
+<p>El archivo que lleva el registro de las estadísticas de memoria es:
+<code>/proc/meminfo</code>.</p>
+</details>
+<p><img alt="IMG-33" src="../../assets/mdos_33.png" /></p>
+<details class="tip">
+<summary>RAM y almacenamiento</summary>
+<p>¿Alguna vez te has preguntado por qué tenemos dispositivos que almacenan información con persistencia (discos duros, SSD, CD-ROM) y memorias que se borran en cuanto dejamos de alimentar a nuestra computadora de electricidad (RAM)?</p>
+<p>La respuesta, de una manera muy simplificada, es la velocidad. Los dispositivos que permiten la persistencia de la información son más lentos que los dispositivos volátiles.</p>
+<p>Si instalamos un software, no queremos tener que instalarlo cada vez que ocupemos la computadora. Queremos que nuestra operación original (instalación) sea <strong>persistente</strong>. Para eso, usamos el almacenamiento. Sin embargo, la interacción con dicho software no puede depender de las velocidades de lectura y escritura del disco, ya que sería muy lento trabajar así. Por eso, empleamos memorias más rápidas (RAM) que consultan al disco de almacenamiento solo una vez y cargan el programa en ellas. Cada interacción del usuario y el software opera directamente con la RAM en lugar de con el disco.</p>
+<p>Te sugerimos ver el siguiente <a href="https://youtu.be/IwUq0RiUank?si=W-qOJ-rDhSzv2Qjp">video</a> para escuchar una explicación más detallada.</p>
+</details>
+<details class="tip">
+<summary>¿Qué es el SWAP?</summary>
+<p>El siguiente ejemplo no es realista en cuanto a cantidades de consumo, pero la sobre simplificación nos ayuda a entender el concepto. </p>
+<p>Imagina que tienes 4 MB de RAM en tu servidor y abres 4 aplicaciones, cada una consumiendo 1 MB de RAM. Es evidente que tendrás disponibles 0 MB después de abrir las 4 aplicaciones. ¿Qué pasaría si intentaras abrir una quinta aplicación que también consume 1 MB?</p>
+<p>Muy probablemente la quinta aplicación no se abriría en absoluto o, si lo hiciera, no funcionaría correctamente (Piensa qué pasaría si intentaras depositar 2 litros en una jarra de 1 litro).</p>
+<p>Para situaciones como esta, existe la partición SWAP. La SWAP es un espacio en nuestro disco duro reservado para estos casos, donde la RAM es insuficiente. En este espacio reservado, se colocan procesos de la RAM para liberar espacio en ella, y así poder utilizar dicho espacio libre con el proceso adicional que no podíamos manejar antes. Es decir, se realiza un <strong>intercambio</strong> de lugar del proceso: pasa de la RAM a la SWAP para no cerrar ningún programa y permitir que el usuario pueda seguir trabajando.    </p>
+<p><strong>Puntos adicionales:</strong>
+1. <strong>Capacidad de almacenamiento de swap</strong>: La partición swap puede configurarse con diferentes tamaños según las necesidades del sistema y la cantidad de memoria RAM disponible.
+2. <strong>Impacto en el rendimiento</strong>: Aunque la swap permite que el sistema continúe funcionando cuando la RAM está llena, el acceso a la swap es más lento que el acceso a la RAM, lo que puede afectar el rendimiento general del sistema.
+3. <strong>Configuración del swap</strong>: En sistemas Linux, es posible ajustar la configuración de la swap para optimizar su uso según las necesidades del sistema, incluyendo la prioridad de uso, el tamaño de la partición y otros parámetros relacionados con su funcionamiento.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">¿Cómo interpreto el resultado del comando?</p>
+<p>El comando muestra las estadísticas de la memoria RAM y de la partición SWAP.</p>
+<ul>
+<li><code>total</code> nos indica el tamaño de la memoria.</li>
+<li><code>used</code> nos indica la memoria no disponible.</li>
+<li><code>free</code> nos indica la memoria que no se ha usado.</li>
+<li><code>available</code> estima la cantidad de memoria disponible para iniciar nuevas aplicaciones sin hacer uso de la partición SWAP.</li>
+</ul>
+<p>Los valores son expresados en las siguientes unidades: </p>
+<ul>
+<li>B = bytes</li>
+<li>Ki = kibibytes</li>
+<li>Mi = mebibytes</li>
+<li>Gi = gibibytes</li>
+<li>Ti = tebibytes</li>
+<li>Pi = pebibytes</li>
+</ul>
+</div>
+<p><a href="https://www.man7.org/linux/man-pages/man8/vmstat.8.html">Otro comando útil para ver estadísticas referentes a la memoria es:</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>vmstat
+</code></pre></div>
+<p><img alt="IMG-34" src="../../assets/mdos_34.png" /></p>
+<p><strong>Procesamiento</strong></p>
+<p>Hay dos comandos que trabajan como un administrador de tareas y nos permiten ver el consumo por proceso/aplicación.</p>
+<p><a href="https://www.man7.org/linux/man-pages/man1/top.1.html">El primero es:</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>top
+</code></pre></div>
+<p><img alt="IMG-37" src="../../assets/mdos_37.png" /></p>
+<p>Para salir de este comando presiona las teclas <code>CTRL</code> + <code>C</code>.</p>
+<p><a href="https://www.man7.org/linux/man-pages/man1/htop.1.html">El segundo es una versión un poco más colorida e interactiva de lo mismo.</a></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>htop
+</code></pre></div>
+<img alt="IMG-38" src="../../assets/mdos_38.png" /></p>
+<p>Para salir de este comando presiona la tecla <code>F10</code> o <code>FN</code> + <code>F10</code>.</p>
+<hr />
+<h3 id="medir-el-uso-del-disco">Medir el uso del disco</h3>
+<p><a href="https://www.man7.org/linux/man-pages/man1/df.1.html">Para ver el uso del espacio en disco usamos:</a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>df<span class="w"> </span>-h
+</code></pre></div>
+<img alt="IMG-35" src="../../assets/mdos_35.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man1/du.1.html">Y para estimar el tamaño de nuestras carpetas que están dentro de nuestra carpeta actual usamos:</a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>du<span class="w"> </span>-h
+</code></pre></div></p>
+<p><img alt="IMG-36" src="../../assets/mdos_36.png" /></p>
+<hr />
+<h3 id="informacion-basica-de-redes">Información básica de redes</h3>
+<div class="admonition warning">
+<p class="admonition-title">Tendrás que volver después de unos módulos a esta sección</p>
+<p>No discutiremos a detalle los valores que generan estos comandos, porque aún no discutimos conceptos teóricos de redes, los listamos aquí porque son básicos en cuanto a lo indispensables que son, pero no son básicos en cuanto a la teoría que abarcan.</p>
+</div>
+<p>Podemos obtener información general de nuestras interfaces de red mediante los siguientes comandos:</p>
+<p><strong>Versión antigua (no viene instalada por defecto)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>ifconfig
+</code></pre></div>
+<p><img alt="IMG-40" src="../../assets/mdos_40.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">¿Cuál es la IP?</p>
+<p>Las direcciones IPv4 (IP versión cuatro) son aquellas seguidas de la palabra "inet", en la imagen anterior podemos ver dos IPs la <code>172.31.32.70</code> y la <code>127.0.0.1</code>cada una vinculada a una interfaz de red distinta. </p>
+</div>
+<p><strong>Versión moderna</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>ip<span class="w"> </span>address
+</code></pre></div>
+<p><img alt="IMG-39" src="../../assets/mdos_39.png" /></p>
+<p>Para obtener información acerca del uso de ancho de bada usamos los siguientes comandos:</p>
+<p><a href="https://www.man7.org/linux/man-pages/man8/netstat.8.html"><strong>Versión estática antigua (No viene instalada por defecto)</strong></a></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>netstat<span class="w"> </span>-i
+</code></pre></div>
+<img alt="IMG-41" src="../../assets/mdos_41.png" /></p>
+<p><strong>Versión estática moderna</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>ip<span class="w"> </span>-s<span class="w"> </span>link
+</code></pre></div>
+<p><img alt="IMG-43" src="../../assets/mdos_43.png" /></p>
+<p><a href="https://www.man7.org/linux/man-pages/man8/ifstat.8.html"><strong>Versión dinámica (No viene instalada por defecto)</strong></a></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>ifstat
+</code></pre></div>
+<img alt="IMG-42" src="../../assets/mdos_42.png" /></p>
+<p>Para salir de este comando presiona las teclas <code>CTRL</code> + <code>C</code>.</p>
+<p>Si se quiere ver más información sobre el consumo en tiempo real puede usar la siguiente herramienta (no viene instalada por defecto):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>sudo<span class="w"> </span>iftop<span class="w"> </span>-i<span class="w"> </span>eth0
+</code></pre></div>
+<p><img alt="IMG-44" src="../../assets/mdos_44.png" /></p>
+<p>Para salir de este comando presiona la tecla <code>q</code>.</p>
+<hr />
+<h3 id="conclusion-de-los-comandos-para-conocer-el-servidor">Conclusión de los comandos para conocer el servidor</h3>
+<p>La sección anterior es bastante densa, pues introduce conceptos teóricos que pueden no ser familiares a todos los lectores y comandos cuyo resultado puede parecer abrumador. No te preocupes si hay términos que no están del todo claros o comandos cuya utilidad no logres ver, tendrás que hacer uso de manuales, documentación, foros y videos externos a este taller para entenderlos en su totalidad y dicha exposición se dará conforme generes situaciones en las que lo tengas que repasar.</p>
+<p>De momento te sugerimos no preocuparte mucho por los comandos relativos a la información de red, salvo los valores "inet" del comando <code>ip address</code>. Adicionalmente, presta mucha atención a los recuadros azules que tienen notas y verdes que tienen tips.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<hr />
+<h3 id="ejercicios-recomendados_1">Ejercicios recomendados</h3>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 1</p>
+<p>En el siguiente <a href="https://www.exploit-db.com/">sitio</a> se registran vulnerabilidades informáticas que podrían conducir a un hackeo.</p>
+<p>La siguiente <a href="https://www.exploit-db.com/exploits/46529">vulnerabilidad</a> permite que un hacker experto filtre información sensible de nuestro servidor, la base de datos dice que solamente la versión de Kernel <code>Linux 4.4</code> está en peligro. ¿Su servidor se encuentra en peligro?</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">1.- Busque en internet: ¿Cómo obtener la versión de mi kernel Linux?</p>
+</div>
+<details class="tip">
+<summary>2.- El contenido de este tip está oculto, se recomienda leerlo solo si el tip anterior NO fue suficiente.</summary>
+<p>Lea el siguiente <a href="https://www.ionos.es/digitalguide/servidores/know-how/como-averiguar-la-version-de-linux/#:~:text=El%20comando%20uname%20%2Dr%20muestra,datos%20del%20kernel%20de%20Linux.">artículo</a>.</p>
+</details>
+<details class="tip">
+<summary>3.- El contenido de este tip está oculto, se recomienda leerlo solo si el tip anterior NO fue suficiente.</summary>
+<p>Le recomendamos usar el comando <code>uname -r</code>.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 2</p>
+<p>Se requiere instalar una biblioteca que procesa gráficos, es exlusiva de la distribución Ubuntu para versiones mayores a la 21.0.0. ¿Su servidor es compatible con la biblioteca?</p>
+</div>
+<details class="tip">
+<summary>1.- El contenido de este tip está oculto, se recomienda leerlo solo si el tip anterior NO fue suficiente.</summary>
+<p>Lea el siguiente <a href="https://www.ionos.es/digitalguide/servidores/know-how/como-averiguar-la-version-de-linux/#:~:text=El%20comando%20uname%20%2Dr%20muestra,datos%20del%20kernel%20de%20Linux.">artículo</a>.</p>
+</details>
+<details class="tip">
+<summary>2.- El contenido de este tip está oculto, se recomienda leerlo solo si el tip anterior NO fue suficiente.</summary>
+<p>Le recomendamos usar el comando <code>lsb_release -d</code>.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 3</p>
+<p>Su personal de desarrollo dice que no fueron capaces de implementar los cambios pactados en su software hace 15 minutos, porque se fue la luz del data center. ¿Cómo sabría si le están diciendo la verdad?</p>
+</div>
+<details class="tip">
+<summary>1.- El contenido de este tip está oculto, se recomienda leerlo solo si NO se te ocurre ninguna solución.</summary>
+<div class="highlight"><pre><span></span><code>Si el tiempo activo del servidor es mayor a 15 minutos están mintiendo.
+</code></pre></div>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Ejercicio 4</p>
+<p>Ejecuta los siguientes comandos en tu servidor:</p>
+<ul>
+<li><code>whoami</code></li>
+<li><code>who</code></li>
+<li><code>w</code></li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 5</p>
+<p>¿Cuál es la arquitectura de tu CPU?</p>
+</div>
+<details class="tip">
+<summary>1.- El contenido de este tip está oculto, se recomienda leerlo solo si NO se te ocurre ninguna solución.</summary>
+<p>Hay dos posibles comandos <code>uname</code> y <code>lscpu</code></p>
+</details>
+<details class="tip">
+<summary>2.- El contenido de este tip está oculto, se recomienda leerlo solo si el tip anterior NO fue suficiente.</summary>
+<p>Prueba con <code>lscpu | grep Architecture</code> y <code>uname -p</code>.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 6</p>
+<p>Da ejemplos de 3 "block devices".</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 7</p>
+<p>Da ejemplos de 3 "PCI devices".</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 8</p>
+<p>¿Tú servidor tiene conectados dispositivos USB?</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 9</p>
+<p>Explica con tus propias palabras por qué usamos memorias RAM y unidades de almacenamiento persistentes.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Pregunta 10</p>
+<p>Explica con tus propias palabras qué es la partición SWAP.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Ejercicio 11</p>
+<p>Mediante el comando <code>htop</code> mata (<code>kill</code>) el proceso <code>htop</code>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Práctica opcional</p>
+<p>Desarrolla un acordeón "cheat sheet" donde anotes los 25 comandos vistos en esta sección y su funcionalidad en máximo 10 palabras por comando.</p>
+<p>El siguiente <a href="https://quickref.me/ssh">sitio</a> tiene una serie de cheat sheets que te pueden servir como inspiración para tu diseño.  </p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/LPUMOGO22"  target="_blank" rel="noopener">Luis Enrique Mora Gómez</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/FVCW5mBQVs" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LPUMOGO22" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/mora-gómez-luis-enrique-5a7411221/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
