@@ -357,10 +357,11 @@ Primero al nivel de nuestra carpeta `proyecto1Django` crea un nuevo fichero llam
 
 ![IMG-25](../assets/gd_25.png)
 
-Dentro de dicho fichero añade la siguiente línea:
+Dentro de dicho fichero añade la siguientes líneas:
 
 ```GIT
 .venv/
+db.sqlite3
 ```
 
 Ahora ejecutemos los siguientes comandos:
@@ -466,3 +467,769 @@ git status
 ![IMG-36](../assets/gd_36.png)
 
 ![IMG-37](../assets/gd_37.png)
+
+
+# Configuremos nuestros templates
+
+Cada framework web necesita una forma conveniente de generar archivos HTML y en Django el enfoque es utilizar "templates", es decir, archivos HTML individuales que se pueden vincular entre sí y que también incluyen lógica básica.
+
+Nuestra primer vista muestra el mensaje: "Hello, World!". ¡Eso técnicamente funciona pero no escala bien! Un mejor enfoque es vincular una vista a un template, separando así la información contenida en cada una.
+
+La primera consideración es dónde colocar los templates dentro de la estructura de un proyecto Django. 
+
+## Estructura por defecto
+
+Hay dos opciones. De forma predeterminada, el cargador de templates de Django buscará templates relacionadas dentro de cada aplicación. Sin embargo, la estructura es algo confusa: cada aplicación necesita un nuevo directorio de templates, otro directorio con el mismo nombre que la aplicación y luego el archivo de template.
+Por lo tanto, en nuestra aplicación de portafolio, Django esperaría el siguiente diseño:
+
+```python
+└── portafolio
+    ├── templates
+        ├── portafolio
+            ├── home.html
+```
+
+Esto significa que necesitaríamos crear un nuevo directorio de templates, un nuevo directorio con el nombre de la aplicación, y finalmente, nuestra plantilla, que es `home.html`.
+
+¿Por qué este enfoque aparentemente repetitivo? ¡La respuesta corta es que el cargador de templates de Django quiere estar realmente seguro de encontrar la plantilla correcta! ¿Qué sucede si hay archivos home.html en dos aplicaciones independientes? Esta estructura garantiza que no existan tales conflictos.
+
+Sin embargo, existe otro enfoque que consiste en crear un único directorio de plantillas a nivel de proyecto y colocar todas las plantillas allí. 
+
+Al hacer un pequeño ajuste en nuestro archivo `django-project/settings.py`, podemos decirle a Django que también busque plantillas en este directorio. Ese es el enfoque que utilizaremos.
+
+## Estructura recomendada
+Primero crea un folder llamado `templates` dentro de `proyecto1Django` (ruta a la que nos referiremos como la ´raíz´ del proyecto), puedes usar el siguiente comando:
+
+```BASH
+mkdir templates
+```
+
+![IMG-38](../assets/gd_38.png)
+
+
+Tu explorador de archivos del editor de código debería tener los siguientes directorios y ficheros:
+
+![IMG-39](../assets/gd_39.png)
+
+A continuación necesitamos actualizar nuestra configuración del proyecto para indicarle a Django la ubicación de nuestro nuevo directorio de `templates`. 
+
+Dirigite al fichero `django_project/settings.py`
+
+Ahí busca la configuración `TEMPLATES` que se debería ver de la siguiente manera:
+
+![IMG-40](../assets/gd_40.png)
+
+Deberás modificar la línea del diccionario `DIRS` para que tenga el siguiente contenido:
+
+```python
+"DIRS": [BASE_DIR / "templates"],
+```
+
+**Antes**
+![IMG-40](../assets/gd_40.png)
+
+**Después**
+![IMG-41](../assets/gd_41.png)
+
+# Configuremos nuestros archivos estáticos
+
+El directorio `templates` contendrá todos nuestros ficheros `.html`, sin embargo, necesitamos agregar algo de `CSS` a nuestro proyecto para mejorar el estilo.
+
+`CSS`, `JavaScript` y las imágenes son una pieza central de cualquier aplicación web moderna y, dentro del mundo Django, se denominan "archivos estáticos". 
+
+Django proporciona una tremenda flexibilidad en cuanto a cómo se utilizan estos archivos, pero esto puede generar mucha confusión al principio.
+
+De forma predeterminada, Django buscará dentro de cada aplicación una carpeta llamada `static`. 
+
+En otras palabras, una carpeta llamada `portafolio/static/`. Muy similar a cómo se tratan las templates.
+
+A medida que los proyectos de Django crecen en complejidad con el tiempo y tienen múltiples aplicaciones, a menudo es más sencillo razonar sobre archivos estáticos si se almacenan en un único directorio a nivel de proyecto. Ése es el enfoque que adoptaremos aquí.
+
+## Estructura recomendada
+Primero crea un folder llamado `static` dentro de `proyecto1Django`, puedes usar el siguiente comando:
+
+```BASH
+mkdir static
+```
+
+![IMG-42](../assets/gd_42.png)
+
+
+Tu explorador de archivos del editor de código debería tener los siguientes directorios y ficheros:
+
+![IMG-43](../assets/gd_43.png)
+
+A continuación necesitamos actualizar nuestra configuración del proyecto para indicarle a Django la ubicación de nuestro nuevo directorio de `static`. 
+
+Dirigite al fichero `django_project/settings.py`
+
+Ahí busca la configuración `STATIC_URL` que se debería ver de la siguiente manera:
+
+![IMG-44](../assets/gd_44.png)
+
+Deberás modificarla para que tenga el siguiente contenido:
+
+```python
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+```
+
+**Antes**
+![IMG-45](../assets/gd_44.png)
+
+**Después**
+![IMG-45](../assets/gd_45.png)
+
+# Probemos nuestra configuración de templates-static
+
+Para validar que nuestras configuraciones sean correctas crearemos dos ficheros, el primero será nuestra primer template a la que llamaremos `home.html` y se localizará dentro de nuestro directorio `templates`. 
+
+El segundo será un fichero de estilos css llamado `styles.css` y se localizará dentro del directrio `static`
+
+![IMG-46](../assets/gd_46.png)
+
+Añade el siguiente contenido a `templates/home.html`
+
+```HTML
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Prueba</title>
+</head>
+<body>
+    <div class="main-test">
+        Hello, World!
+    </div>
+</body>
+</html>
+```
+
+Añade el siguiente contenido a `static/styles.css`
+
+```CSS
+.main-test{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+```
+
+
+Para que nuestra vista deje de retornar el mensaje que definimos inicialente y en su lugar retorne la plantilla que acabamos de crear modificaremos el fichero `portafolio/views.py` poniendo el siguiente contenido:
+
+```python
+from django.views.generic import TemplateView
+
+class HomePageView(TemplateView): 
+    template_name = "home.html"
+```
+
+**Antes**
+
+![IMG-19](../assets/gd_19.png)
+
+**Después**
+![IMG-48](../assets/gd_48.png)
+
+Finalmente modificaremos el fichero `portafolio/urls.py` poniendo el siguiente contenido:
+
+```python
+from django.urls import path 
+from .views import HomePageView
+
+urlpatterns = [
+    path("", HomePageView.as_view(), name="home"),
+]
+```
+
+**Antes**
+
+![IMG-20](../assets/gd_20.png)
+
+**Después**
+![IMG-49](../assets/gd_49.png)
+
+Ejecute el servidor de desarrollo mediante el comando:
+
+```BASH
+python manage.py runserver
+```
+
+E ingrese a [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+Debería ser capaz de ver el siguiente contenido:
+
+![IMG-50](../assets/gd_50.png)
+
+***
+
+# CRUD
+En informática, `CRUD` es el acrónimo de "Crear, Leer, Actualizar y Borrar" (del original en inglés: Create, Read, Update and Delete), que se usa para referirse a las funciones básicas en bases de datos o la capa de persistencia en un software.
+
+En esta sección usaremos el proyecto que recién configuramos para generar un menú digital de restaurante partiendo del siguiente diagrama entidad-relación:
+
+
+```mermaid
+erDiagram
+    CATEGORIA {
+        int ID
+        string Nombre
+        string Descripcion
+    }
+
+    PRODUCTO {
+        int ID
+        string Nombre
+        string Descripcion
+        float Precio
+        boolean Disponibilidad
+        int CategoriaID
+    }
+
+    CATEGORIA ||--|{ PRODUCTO : contiene
+```
+
+## Modelos
+
+En Django, los modelos se utilizan para definir la estructura de la base de datos. Cada modelo representa una tabla en la base de datos y cada atributo del modelo representa una columna en dicha tabla. A continuación, explicaremos cómo definir un modelo llamado `Categoria`.
+
+### Declaración del Modelo Categoría
+
+Para definir un modelo en Django, debes crear una clase que herede de `models.Model`. Aquí tienes un ejemplo de cómo declarar un modelo `Categoria`:
+
+```python
+class Categoria(models.Model):
+```
+
+### Definición de Campos
+
+Cada modelo debe tener campos definidos, que corresponden a los atributos de nuestro diagrama entidad-relación. En el modelo `Categoria`, definiremos dos campos:
+
+```python
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField()
+```
+
+- `nombre`: Este es un `CharField`, que se utiliza para almacenar texto corto. El argumento `max_length=50` establece la longitud máxima permitida para este campo en 50 caracteres.
+  
+- `descripcion`: Este es un `TextField`, que se utiliza para almacenar texto más largo sin una longitud máxima específica.
+
+### Método `__str__`
+
+Es una buena práctica definir el método `__str__` en tus modelos. Este método determina cómo se representará el objeto del modelo como una cadena. Esto es especialmente útil para la representación de los objetos en el panel de administración de Django y en otros contextos donde los objetos se convierten en cadenas.
+
+```python
+    def __str__(self):
+        return self.nombre
+```
+
+En este caso, el método `__str__` devuelve el valor del campo `nombre`. Esto significa que cuando se imprima o se muestre un objeto `Categoria`, se verá como el valor de su campo `nombre`.
+
+### Declaración Completa del Modelo
+
+Aquí está la declaración completa del modelo `Categoria`:
+
+```python
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField()
+
+    def __str__(self):
+        return self.nombre
+```
+
+¡Por supuesto! Vamos a introducir el siguiente modelo, `Producto`, y explicaremos los detalles relevantes de su declaración.
+
+### Declaración del Modelo Producto
+
+Aquí está la declaración del modelo `Producto`:
+
+```python
+class Producto(models.Model):
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField()
+    precio = models.DecimalField(max_digits=5, decimal_places=2)
+    disponibilidad = models.BooleanField(default=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre
+```
+
+### Detalles Relevantes
+
+- `nombre`: Este es un `CharField` con una longitud máxima de 50 caracteres, utilizado para almacenar el nombre del producto.
+
+- `descripcion`: Este es un `TextField`, utilizado para almacenar una descripción detallada del producto.
+
+- `precio`: Este es un `DecimalField`, que se utiliza para almacenar valores decimales. El argumento `max_digits=5` especifica el número total de dígitos permitidos en el número, mientras que `decimal_places=2` especifica cuántos de esos dígitos se encuentran después del punto decimal. Esto es útil para almacenar precios.
+
+- `disponibilidad`: Este es un `BooleanField`, que se utiliza para almacenar valores de verdadero o falso. El argumento `default=True` establece que el valor predeterminado es `True`, lo que indica que el producto está disponible por defecto.
+
+- `categoria`: Este es un `ForeignKey` que crea una relación muchos a uno con el modelo `Categoria`. El argumento `on_delete=models.CASCADE` especifica que si la categoría asociada se elimina, todos los productos asociados con esa categoría también se eliminarán. Esta relación permite que cada producto esté asociado con una categoría específica.
+
+## Implementación en proyecto
+
+Para implementar los modelos en el proyecto deberás dirigirte al fichero `portafolio/models.py` y dejar su contenido de la siguiente manera:
+
+```python
+from django.db import models
+
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField()
+
+    def __str__(self):
+        return self.nombre
+
+
+class Producto(models.Model):
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField()
+    precio = models.DecimalField(max_digits=5, decimal_places=2)
+    disponibilidad = models.BooleanField(default=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre
+
+```
+
+### Creación y Aplicación de Migraciones
+
+Después de definir tus modelos en Django, debes crear y aplicar las migraciones para actualizar tu base de datos con las nuevas estructuras de las tablas. Aquí están los pasos a seguir:
+
+### Paso 1: Crear Migraciones
+
+El primer comando que debes ejecutar es `makemigrations`. Este comando analiza tus modelos y crea los archivos de migración necesarios para reflejar los cambios en la base de datos.
+
+```bash
+python manage.py makemigrations
+```
+
+Al ejecutar este comando, Django generará un archivo de migración en el directorio `migrations` de tu aplicación. Este archivo contiene las instrucciones para crear las nuevas tablas y campos en la base de datos.
+
+![IMG-51](../assets/gd_51.png)
+
+### Paso 2: Aplicar Migraciones
+
+Una vez que las migraciones han sido creadas, necesitas aplicarlas a la base de datos usando el comando `migrate`. Este comando ejecuta las instrucciones contenidas en los archivos de migración para actualizar la estructura de la base de datos.
+
+```bash
+python manage.py migrate
+```
+
+Al ejecutar este comando, Django aplicará todas las migraciones pendientes y actualizará tu base de datos con las nuevas tablas y campos definidos en tus modelos.
+
+![IMG-52](../assets/gd_52.png)
+
+### Resumen
+
+1. **Crear Migraciones**:
+    ```bash
+    python manage.py makemigrations
+    ```
+
+2. **Aplicar Migraciones**:
+    ```bash
+    python manage.py migrate
+    ```
+
+Estos comandos son esenciales para que los cambios en tus modelos se reflejen en la base de datos. Asegúrate de ejecutarlos en este orden cada vez que hagas cambios en tus modelos.
+
+## Vistas
+
+En Django existen diferentes tipos de vistas, originalmente solo existían las vistas basadas en funciones, sin embargo, los desarrolladores pronto notaron que las acciones de un `CRUD` son en escencia identicas siempre (lista todos los registros de una tabla, crea un nuevo registro de cierta tabla, elimina un registro, etc.) para ello desarrollaron `Vistas basadas en Clases (Class-Based Views)` que nos permiten heredar los casos de uso comúnes para no perder tiempo volviendo a escribir funciones usuales una y otra vez. 
+
+Para desarrollar nuestro CRUD haremos uso de varias `Class-Based Views` y veremos lo fácil que es implementarlas en Django.
+
+Para comenzar a generar el código de nuestras vistas edita el fichero `portafolio/views.py`, en él será necesario que en la parte superior escribas el siguiente código que nos permite importar modelos y las clases de las que heredaremos:
+
+```python
+from .models import Categoria, Producto
+
+from django.views.generic import (
+    CreateView,
+    ListView,
+    UpdateView,
+    DeleteView,
+)
+
+
+```
+
+### Vista de Creación
+Comencemos con la vista que nos permite crear registros de `Categoria`:
+
+```python
+
+class CategoriaCreateView(CreateView):
+    model = Categoria
+    template_name = "categoria_create.html"
+    fields = [
+        "nombre",
+        "descripcion",
+    ]
+    success_url = "/"
+
+```
+
+Debemos crear el fichero `templates/categoria_create.html` vinculado a esta vista.
+
+La vista que nos permite crear registros de `Producto` es análoga:
+
+```python
+class ProductoCreateView(CreateView):
+    model = Producto
+    template_name = "producto_create.html"
+    fields = [
+        "nombre",
+        "descripcion",
+        "precio",
+        "disponibilidad",
+        "categoria",
+    ]
+    success_url = "/"
+```
+
+Debemos crear el fichero `templates/producto_create.html` vinculado a esta vista.
+
+### Vista de Lectura
+
+Para listar todos los registros de `Categoria` usaremos esta vista:
+
+```python
+class CategoriaListView(ListView):
+    model = Categoria
+    template_name = "categoria_list.html"
+    context_object_name = "categorias"
+```
+
+Debemos crear el fichero `templates/categoria_list.html` vinculado a esta vista.
+
+Para listar todos los registros de `Producto` usaremos:
+
+```python
+class ProductoListView(ListView):
+    model = Producto
+    template_name = "producto_list.html"
+    context_object_name = "productos"
+```
+Debemos crear el fichero `templates/producto_list.html` vinculado a esta vista.
+
+### Vista de Actualización
+
+Para actualizar algún registro de `Categoria` usaremos:
+
+```python
+class CategoriaUpdateView(UpdateView):
+    model = Categoria
+    template_name = "categoria_update.html"
+    fields = [
+        "nombre",
+        "descripcion",
+    ]
+    success_url = "/"
+```
+
+Debemos crear el fichero `templates/categoria_update.html` vinculado a esta vista.
+
+Para actualizar algún registro de `Producto` usaremos:
+
+```python
+class ProductoUpdateView(UpdateView):
+    model = Producto
+    template_name = "producto_update.html"
+    fields = [
+        "nombre",
+        "descripcion",
+        "precio",
+        "disponibilidad",
+        "categoria",
+    ]
+    success_url = "/"
+```
+
+Debemos crear el fichero `templates/producto_update.html` vinculado a esta vista.
+
+### Vista de Borrado
+
+Para borrar algún registro de `Categoria` usaremos:
+
+```python
+class CategoriaDeleteView(DeleteView):
+    model = Categoria
+    template_name = "categoria_delete.html"
+    success_url = "/"
+```
+
+Debemos crear el fichero `templates/categoria_delete.html` vinculado a esta vista.
+
+Para borrar algún registro de `Producto` usaremos:
+
+```python
+class ProductoDeleteView(DeleteView):
+    model = Producto
+    template_name = "producto_delete.html"
+    success_url = "/"
+```
+
+Debemos crear el fichero `templates/producto_delete.html` vinculado a esta vista.
+
+### Contenido del fichero views.py
+
+```python
+from django.views.generic import TemplateView
+
+from .models import Categoria, Producto
+
+from django.views.generic import (
+    CreateView,
+    ListView,
+    UpdateView,
+    DeleteView,
+)
+
+
+class HomePageView(TemplateView):
+    template_name = "home.html"
+
+
+class CategoriaCreateView(CreateView):
+    model = Categoria
+    template_name = "categoria_create.html"
+    fields = [
+        "nombre",
+        "descripcion",
+    ]
+    success_url = "/"
+
+
+class CategoriaListView(ListView):
+    model = Categoria
+    template_name = "categoria_list.html"
+    context_object_name = "categorias"
+
+
+class CategoriaUpdateView(UpdateView):
+    model = Categoria
+    template_name = "categoria_update.html"
+    fields = [
+        "nombre",
+        "descripcion",
+    ]
+    success_url = "/"
+
+
+class CategoriaDeleteView(DeleteView):
+    model = Categoria
+    template_name = "categoria_delete.html"
+    success_url = "/"
+
+
+class ProductoCreateView(CreateView):
+    model = Producto
+    template_name = "producto_create.html"
+    fields = [
+        "nombre",
+        "descripcion",
+        "precio",
+        "disponibilidad",
+        "categoria",
+    ]
+    success_url = "/"
+
+
+class ProductoListView(ListView):
+    model = Producto
+    template_name = "producto_list.html"
+    context_object_name = "productos"
+
+
+class ProductoUpdateView(UpdateView):
+    model = Producto
+    template_name = "producto_update.html"
+    fields = [
+        "nombre",
+        "descripcion",
+        "precio",
+        "disponibilidad",
+        "categoria",
+    ]
+    success_url = "/"
+
+
+class ProductoDeleteView(DeleteView):
+    model = Producto
+    template_name = "producto_delete.html"
+    success_url = "/"
+
+```
+
+## Templates
+### Creación de categoría
+
+```html
+{% load static %}
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Crear Categoría</title> 
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    </head> 
+    <body> 
+        <div class="content section"> 
+            <div class="block">
+                <h2>Crear Categoría</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Crear</button>
+                </form>
+            </div> 
+        </div> 
+    </body> 
+</html>
+```
+
+### Listado de categorías
+
+```html
+{% load static %}
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Listado de Categorias</title> 
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    </head> 
+    <body> 
+        <div class="content section"> 
+            <div class="block">
+                <h2>Listado de Categorias</h2>
+
+                <a href="{% url 'membresia-create' %}">Crear Membresia</a>
+
+                {% for categoria in categorias %}
+                    <ul>
+                        <li>
+                            {{ categoria }}
+                        </li>
+                    </ul>
+                {% empty %}
+                    <ul>
+                        <li>No hay categorias disponibles.</li>
+                    </ul>
+                {% endfor %}
+            </div>
+        </div> 
+    </body> 
+</html>
+```
+
+### Actualización de categorias
+
+```html
+{% load static %}
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Actualizar Categoría</title> 
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    </head> 
+    <body> 
+        <div class="content section"> 
+            <div class="block">
+                <h2>Actualizar Categoría</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Actualizar</button>
+                </form>
+            </div> 
+        </div> 
+    </body> 
+</html>
+```
+
+### Borrado de categorias
+
+```html
+{% load static %}
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Eliminar Categoria</title> 
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    </head> 
+    <body> 
+        <div class="content section"> 
+            <div class="block">
+                <h2>Eliminar Categoria</h2>
+                <p>¿Estás seguro de que quieres eliminar la categoria "{{ object.nombre }}"?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit">Eliminar</button>
+                </form>
+            </div>
+        </div> 
+    </body> 
+</html>
+```
+
+## URLs
+
+```python
+from django.urls import path
+from .views import (
+    HomePageView,
+    CategoriaCreateView,
+    CategoriaListView,
+    CategoriaUpdateView,
+    CategoriaDeleteView,
+    ProductoCreateView,
+    ProductoListView,
+    ProductoUpdateView,
+    ProductoDeleteView,
+)
+
+urlpatterns = [
+    path("", HomePageView.as_view(), name="home"),
+    path("categoria/create/", CategoriaCreateView.as_view(), name="categoria_create"),
+    path("categoria/list/", CategoriaListView.as_view(), name="categoria_list"),
+    path(
+        "categoria/update/<int:pk>/",
+        CategoriaUpdateView.as_view(),
+        name="categoria_update",
+    ),
+    path(
+        "categoria/delete/<int:pk>/",
+        CategoriaDeleteView.as_view(),
+        name="categoria_delete",
+    ),
+    path("producto/create/", ProductoCreateView.as_view(), name="producto_create"),
+    path("producto/list/", ProductoListView.as_view(), name="producto_list"),
+    path(
+        "producto/update/<int:pk>/",
+        ProductoUpdateView.as_view(),
+        name="producto_update",
+    ),
+    path(
+        "producto/delete/<int:pk>/",
+        ProductoDeleteView.as_view(),
+        name="producto_delete",
+    ),
+]
+
+```

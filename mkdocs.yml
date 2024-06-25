@@ -59,6 +59,11 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 copyright: |
   &copy; 2024 <a href="https://github.com/LPUMOGO22"  target="_blank" rel="noopener">Luis Enrique Mora Gómez</a>
